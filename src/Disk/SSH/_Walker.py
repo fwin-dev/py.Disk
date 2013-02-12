@@ -1,4 +1,4 @@
-from ..Walker import WalkerAbstract
+from Disk.Walker import WalkerAbstract
 from _Paths import FolderPath
 from Net import SSH
 

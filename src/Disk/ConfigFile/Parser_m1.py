@@ -1,5 +1,5 @@
-from ..TempFile import NamedSecureTempFile
-from .. import Local
+from Disk.TempFile import NamedSecureTempFile
+from Disk import Local
 
 import sys, fileinput, re
 

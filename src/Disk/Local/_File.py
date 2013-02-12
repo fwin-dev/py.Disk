@@ -1,4 +1,4 @@
-from .. import _base
+from Disk import _base
 from _Paths import FilePath
 
 class BaseFile(_base.File):

@@ -33,7 +33,7 @@ class ZipFile:
 				if name.startswith("/") or ".." in name:
 					continue
 				
-				target = os.path.join(extractDir, *name.split("/"))
+				target = os.path.join(str(extractDir), *name.split("/"))
 				if name.endswith("/"):	# directory
 					self._ensureDirectory(target)
 				else:	# file

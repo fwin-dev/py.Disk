@@ -1,5 +1,5 @@
 from _Paths import FolderPath
-from ..Walker import WalkerAbstract
+from Disk.Walker import WalkerAbstract
 import os
 
 class LocalFolderWalker(WalkerAbstract):

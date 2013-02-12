@@ -1,6 +1,6 @@
-from .. import _base
+from Disk import _base
 import Net.SSH
-from ..TempFile import NamedSecureTempFile
+from Disk.TempFile import NamedSecureTempFile
 from _Paths import FilePath
 
 import os.path

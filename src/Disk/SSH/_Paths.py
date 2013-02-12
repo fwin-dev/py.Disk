@@ -1,4 +1,4 @@
-from .. import _base
+from Disk import _base
 from Net import SSH
 
 class SSHpathAbstract:
