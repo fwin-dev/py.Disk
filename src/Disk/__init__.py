@@ -1,4 +1,4 @@
-import base, Local, SSH
+import _base, Local, SSH
 
 from Walker import walk
 
@@ -7,9 +7,9 @@ import os.path
 def _join(*paths):
 	for i in range(0, len(paths)):
 		_type = str
-		if isinstance(paths[i], base.File):
+		if isinstance(paths[i], _base.File):
 			paths[i] = paths[i].getPath()
-		if isinstance(paths[i], base.PathAbstract):
+		if isinstance(paths[i], _base.PathAbstract):
 			_type = paths[i]
 			paths[i] = paths[i].asStr()
 	

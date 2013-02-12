@@ -1,10 +1,10 @@
-from Local import BaseFile, FilePath
+from Local._File import FilePath, BaseFile
 
 import os, tempfile
 
 class NamedSecureTempFile(BaseFile):
 	"""
-	This is basically a combination python's built-in tempfile.NamedTemporaryFile and tempfile.mkstemp
+	This is basically a combination of python's built-in tempfile.NamedTemporaryFile and tempfile.mkstemp
 	@see NamedTemporaryFile
 	@see tempfile.mkstemp
 	"""
