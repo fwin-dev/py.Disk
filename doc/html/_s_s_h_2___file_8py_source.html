@@ -102,9 +102,9 @@ $(document).ready(function(){initNavTree('_s_s_h_2___file_8py_source.html','');}
 <div class="title">_File.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_s_s_h_2___file_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_s_s_h_1_1___file.html">    1</a></span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> _base</div>
+<a href="_s_s_h_2___file_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_s_s_h_1_1___file.html">    1</a></span>&#160;<span class="keyword">from</span> Disk <span class="keyword">import</span> _base</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> Net.SSH</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> ..TempFile <span class="keyword">import</span> NamedSecureTempFile</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_disk_1_1_temp_file.html">Disk.TempFile</a> <span class="keyword">import</span> NamedSecureTempFile</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> _Paths <span class="keyword">import</span> FilePath</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> os.path</div>
@@ -126,12 +126,12 @@ $(document).ready(function(){initNavTree('_s_s_h_2___file_8py_source.html','');}
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="class_disk_1_1__base_1_1_file.html#af102e43df01146ebaa2c3996d3211da2">mode</a> <span class="keywordflow">not</span> <span class="keywordflow">in</span> [<span class="stringliteral">&quot;w&quot;</span>, <span class="stringliteral">&quot;wb&quot;</span>]:    <span class="comment"># need to know file contents since we&#39;re reading</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="class_disk_1_1__base_1_1_file.html#a7401ddb8e1f5573402123b8f65b7bc08">getPath</a>().exists():</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                self.connection.runShellCMD(<span class="stringliteral">&quot;touch &quot;</span> + Net.SSH.escapePath(self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a04b701f1834be7ae47863f301b4e7378">remotePath</a>))</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a0796ca580db61fd143ccb0ba3c43350c">_file</a> = NamedSecureTempFile(<span class="stringliteral">&quot;wb&quot;</span>)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a0796ca580db61fd143ccb0ba3c43350c">_file</a> = <a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html" title="This is basically a combination of python&#39;s built-in tempfile.NamedTemporaryFile and tempfile...">NamedSecureTempFile</a>(<span class="stringliteral">&quot;wb&quot;</span>)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            with self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a0796ca580db61fd143ccb0ba3c43350c">_file</a>:</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                self.connection.download(self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a04b701f1834be7ae47863f301b4e7378">remotePath</a>, self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a0796ca580db61fd143ccb0ba3c43350c">_file</a>)   <span class="comment"># download supports file like objects with a &quot;write&quot; method</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            self._file.reopen(self.<a class="code" href="class_disk_1_1__base_1_1_file.html#af102e43df01146ebaa2c3996d3211da2">mode</a>)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a0796ca580db61fd143ccb0ba3c43350c">_file</a> = NamedSecureTempFile(self.<a class="code" href="class_disk_1_1__base_1_1_file.html#af102e43df01146ebaa2c3996d3211da2">mode</a>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a0796ca580db61fd143ccb0ba3c43350c">_file</a> = <a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html" title="This is basically a combination of python&#39;s built-in tempfile.NamedTemporaryFile and tempfile...">NamedSecureTempFile</a>(self.<a class="code" href="class_disk_1_1__base_1_1_file.html#af102e43df01146ebaa2c3996d3211da2">mode</a>)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="class_disk_1_1__base_1_1_file.html#af4a79b03f7f30ffdf6be32aaa025f9aa">isWritable</a>():</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            self.<a class="code" href="class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a97d384f241fcfcef0c7d22e1b9f3e458">_needsFlush</a> = <span class="keyword">False</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('_s_s_h_2___file_8py_source.html','');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47fc0d7b6ba4b1677fa8a84de58435ea.html">Disk</a></li><li class="navelem"><a class="el" href="dir_31d74e11f559c443729db572941448bb.html">SSH</a></li><li class="navelem"><a class="el" href="_s_s_h_2___file_8py.html">_File.py</a></li>
-    <li class="footer">Generated on Tue Feb 12 2013 09:43:53 for py.Disk by
+    <li class="footer">Generated on Tue Feb 12 2013 13:55:15 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

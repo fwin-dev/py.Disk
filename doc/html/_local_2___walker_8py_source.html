@@ -103,12 +103,12 @@ $(document).ready(function(){initNavTree('_local_2___walker_8py_source.html','')
 </div><!--header-->
 <div class="contents">
 <a href="_local_2___walker_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_local_1_1___walker.html">    1</a></span>&#160;<span class="keyword">from</span> _Paths <span class="keyword">import</span> FolderPath</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> ..Walker <span class="keyword">import</span> WalkerAbstract</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_disk_1_1_walker.html">Disk.Walker</a> <span class="keyword">import</span> WalkerAbstract</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> os</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">##</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># Implementation of WalkerAbstract for folders on the local system.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html" title="Implementation of WalkerAbstract for folders on the local system.">LocalFolderWalker</a>(WalkerAbstract):</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html" title="Implementation of WalkerAbstract for folders on the local system.">LocalFolderWalker</a>(<a class="code" href="class_disk_1_1_walker_1_1_walker_abstract.html" title="Gets a list of files and/or folders in a folder.">WalkerAbstract</a>):</div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html#ac5b0f6c767c34a3d10b2ce1cd78fb139">    8</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html#ac5b0f6c767c34a3d10b2ce1cd78fb139">__init__</a>(self):</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        super(LocalFolderWalker, self).<a class="code" href="class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html#ac5b0f6c767c34a3d10b2ce1cd78fb139">__init__</a>()</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    @classmethod</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('_local_2___walker_8py_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47fc0d7b6ba4b1677fa8a84de58435ea.html">Disk</a></li><li class="navelem"><a class="el" href="dir_05ab8530b98084c392d6845b64f09170.html">Local</a></li><li class="navelem"><a class="el" href="_local_2___walker_8py.html">_Walker.py</a></li>
-    <li class="footer">Generated on Tue Feb 12 2013 09:43:53 for py.Disk by
+    <li class="footer">Generated on Tue Feb 12 2013 13:55:15 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

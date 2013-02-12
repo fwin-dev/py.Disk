@@ -35,7 +35,7 @@ class PermBits(unittest.TestCase):
 #		self.assert_(parentPerms == filePerms, str(parentPerms) + " == " + str(filePerms))
 
 
-class TestSSH:
+class TestSSH(object):
 	def setUp(self):
 		self.con = Net.SSH.Connection(host="192.168.205.30")
 		self.folder = SSH.FolderPath(self.con, "/tmp/pyTest")
@@ -44,7 +44,7 @@ class TestSSH:
 	def tearDown(self):
 		self.folder.remove(isRecursive=True)
 
-class TestLocal:
+class TestLocal(object):
 	def setUp(self):
 		self.folder = Local.FolderPath("/tmp/pyTest")
 		assert not self.folder.exists()

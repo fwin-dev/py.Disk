@@ -102,8 +102,8 @@ $(document).ready(function(){initNavTree('_parser__m1_8py_source.html','');});
 <div class="title">Parser_m1.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_parser__m1_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_config_file_1_1_parser__m1.html">    1</a></span>&#160;<span class="keyword">from</span> ..TempFile <span class="keyword">import</span> NamedSecureTempFile</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> Local</div>
+<a href="_parser__m1_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_config_file_1_1_parser__m1.html">    1</a></span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_disk_1_1_temp_file.html">Disk.TempFile</a> <span class="keyword">import</span> NamedSecureTempFile</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> Disk <span class="keyword">import</span> Local</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> sys, fileinput, re</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('_parser__m1_8py_source.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_config_file_1_1_parser__m1.html#ace0e15014ac3cfb20074e2164487ab43">   53</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespace_disk_1_1_config_file_1_1_parser__m1.html#ace0e15014ac3cfb20074e2164487ab43">changeConfig</a>(filePath, newLine, commentChar=&#39;#&#39;, assignChar=&#39; &#39;, sectionName=None, sectionMatch=&#39;[&#39;):</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> isinstance(filePath, basestring):</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        filePath = Local.FilePath(filePath)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    backupFile = NamedSecureTempFile(delete=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    backupFile = <a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html" title="This is basically a combination of python&#39;s built-in tempfile.NamedTemporaryFile and tempfile...">NamedSecureTempFile</a>(delete=<span class="keyword">False</span>)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    filePath.copy(backupFile, shouldCopyDates=<span class="keyword">True</span>)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">try</span>:</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> _changeConfig(filePath, newLine, commentChar, assignChar, sectionName, sectionMatch)</div>
@@ -232,7 +232,7 @@ $(document).ready(function(){initNavTree('_parser__m1_8py_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47fc0d7b6ba4b1677fa8a84de58435ea.html">Disk</a></li><li class="navelem"><a class="el" href="dir_d3c1ca252f193c16ffc02ea7d0958b89.html">ConfigFile</a></li><li class="navelem"><a class="el" href="_parser__m1_8py.html">Parser_m1.py</a></li>
-    <li class="footer">Generated on Tue Feb 12 2013 09:43:53 for py.Disk by
+    <li class="footer">Generated on Tue Feb 12 2013 13:55:14 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -59,16 +59,15 @@ var hierarchy =
       [ "Disk.UnitTests.LocalWalker", "class_disk_1_1_unit_tests_1_1_local_walker.html", null ],
       [ "Disk.UnitTests.SSHwalker", "class_disk_1_1_unit_tests_1_1_s_s_hwalker.html", null ]
     ] ],
-    [ "Disk.Walker.WalkerAbstract", "class_disk_1_1_walker_1_1_walker_abstract.html", null ],
+    [ "Disk.Walker.WalkerAbstract", "class_disk_1_1_walker_1_1_walker_abstract.html", [
+      [ "Disk.Local._Walker.LocalFolderWalker", "class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html", null ],
+      [ "Disk.SSH._Walker.SSHFolderWalker", "class_disk_1_1_s_s_h_1_1___walker_1_1_s_s_h_folder_walker.html", null ]
+    ] ],
     [ "Disk.CompressedFile.ZipFile", "class_disk_1_1_compressed_file_1_1_zip_file.html", null ],
     [ "BaseFile", null, [
       [ "Disk.TempFile.NamedSecureTempFile", "class_disk_1_1_temp_file_1_1_named_secure_temp_file.html", null ]
     ] ],
     [ "FolderPath", null, [
       [ "Disk.TempFolder.TempFolderPath", "class_disk_1_1_temp_folder_1_1_temp_folder_path.html", null ]
-    ] ],
-    [ "WalkerAbstract", null, [
-      [ "Disk.Local._Walker.LocalFolderWalker", "class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html", null ],
-      [ "Disk.SSH._Walker.SSHFolderWalker", "class_disk_1_1_s_s_h_1_1___walker_1_1_s_s_h_folder_walker.html", null ]
     ] ]
 ];

@@ -1,4 +1,16 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node3" href="$class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html" title="Implementation of WalkerAbstract for folders on the local system." alt="" coords="176,5,339,46"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_s_s_h_1_1___walker_1_1_s_s_h_folder_walker.html" title="Disk.SSH._Walker.SSHFolder\lWalker" alt="" coords="163,70,352,111"/>
+<area shape="rect" id="node1" href="$classobject.html" title="object" alt="" coords="5,107,61,133"/>
+<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file.html" title="Disk._base.File" alt="" coords="138,56,246,83"/>
+<area shape="rect" id="node11" href="$class_disk_1_1__base_1_1_path_abstract.html" title="Disk._base.PathAbstract" alt="" coords="110,157,274,184"/>
+<area shape="rect" id="node5" href="$class_disk_1_1_local_1_1___file_1_1_base_file.html" title="Abstract concept of a file object." alt="" coords="355,5,515,32"/>
+<area shape="rect" id="node9" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html" title="Represents a file on a remote machine." alt="" coords="371,56,498,83"/>
+<area shape="rect" id="node7" href="$class_disk_1_1_local_1_1___file_1_1_file.html" title="Implementation of BaseFile using a FilePath instance to store the path." alt="" coords="623,5,753,32"/>
+<area shape="rect" id="node13" href="$class_disk_1_1__base_1_1_file_path.html" title="Disk._base.FilePath" alt="" coords="367,157,502,184"/>
+<area shape="rect" id="node19" href="$class_disk_1_1__base_1_1_folder_path.html" title="Abstract concept of a folder path." alt="" coords="359,208,510,235"/>
+<area shape="rect" id="node15" href="$class_disk_1_1_local_1_1___paths_1_1_file_path.html" title="A locally accessible file path." alt="" coords="602,107,774,133"/>
+<area shape="rect" id="node17" href="$class_disk_1_1_s_s_h_1_1___paths_1_1_file_path.html" title="Path of a file on a remote machine." alt="" coords="603,208,773,235"/>
+<area shape="rect" id="node21" href="$class_disk_1_1_local_1_1___paths_1_1_folder_path.html" title="A locally accessible folder path." alt="" coords="595,157,781,184"/>
+<area shape="rect" id="node23" href="$class_disk_1_1_s_s_h_1_1___paths_1_1_folder_path.html" title="Path of a folder on a remote machine." alt="" coords="596,259,780,285"/>
+<area shape="rect" id="node24" href="$class_disk_1_1_local_1_1___paths_1_1_path_abstract.html" title="Abstract concept of a file or folder path." alt="" coords="334,107,535,133"/>
+<area shape="rect" id="node27" href="$class_disk_1_1_s_s_h_1_1___paths_1_1_s_s_hpath_abstract.html" title="Disk.SSH._Paths.SSHpathAbstract" alt="" coords="323,259,547,285"/>
 </map>
