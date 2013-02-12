@@ -1,0 +1,13 @@
+<map id="object" name="object">
+<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file.html" title="{Disk._base.File\n|+ mode\l+ isDestructed\l+ isDesructed\l|+ __init__()\l+ __enter__()\l+ __exit__()\l+ getPath()\l+ isWritable()\l+ isClosed()\l+ destruct()\l+ reopen()\l}" alt="" coords="219,131,327,341"/>
+<area shape="rect" id="node11" href="$class_disk_1_1__base_1_1_path_abstract.html" title="{Disk._base.PathAbstract\n|+ path\l|+ __init__()\l+ asStr()\l+ __str__()\l+ __repr__()\l+ __add__()\l+ __radd__()\l+ __eq__()\l+ __hash__()\l+ __getattr__()\l}" alt="" coords="362,139,525,333"/>
+<area shape="rect" id="node5" href="$class_disk_1_1_local_1_1___file_1_1_base_file.html" title="Abstract concept of a file object." alt="" coords="5,404,165,540"/>
+<area shape="rect" id="node9" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html" title="Represents a file on a remote machine." alt="" coords="210,404,336,540"/>
+<area shape="rect" id="node7" href="$class_disk_1_1_local_1_1___file_1_1_file.html" title="Implementation of BaseFile using a FilePath instance to store the path." alt="" coords="15,625,144,703"/>
+<area shape="rect" id="node13" href="$class_disk_1_1__base_1_1_file_path.html" title="{Disk._base.FilePath\n||+ __init__()\l+ asFile()\l+ create()\l+ copyDates()\l+ copy()\l+ move()\l+ rename()\l}" alt="" coords="377,389,511,555"/>
+<area shape="rect" id="node19" href="$class_disk_1_1__base_1_1_folder_path.html" title="Abstract concept of a folder path." alt="" coords="577,397,727,547"/>
+<area shape="rect" id="node15" href="$class_disk_1_1_local_1_1___paths_1_1_file_path.html" title="A locally accessible file path." alt="" coords="169,611,340,717"/>
+<area shape="rect" id="node17" href="$class_disk_1_1_s_s_h_1_1___paths_1_1_file_path.html" title="Path of a file on a remote machine." alt="" coords="365,603,533,725"/>
+<area shape="rect" id="node21" href="$class_disk_1_1_local_1_1___paths_1_1_folder_path.html" title="A locally accessible folder path." alt="" coords="559,618,745,710"/>
+<area shape="rect" id="node23" href="$class_disk_1_1_s_s_h_1_1___paths_1_1_folder_path.html" title="Path of a folder on a remote machine." alt="" coords="769,618,953,710"/>
+</map>

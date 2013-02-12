@@ -11,7 +11,7 @@ class ParseException(Exception):
 
 class _ConfigLine:
 	def __init__(self, line, commentChar='#', assignChar='='):
-		"""assignChar:	can be None"""
+		"""assignChar	str:	can be None"""
 		self.line = line
 		self.commentChar = commentChar
 		self.assignChar = assignChar
