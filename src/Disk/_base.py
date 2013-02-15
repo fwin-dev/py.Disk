@@ -1,14 +1,14 @@
-from Lang import Function
+from Lang import FuncTools
 
 from abc import ABCMeta, abstractmethod
 import os, os.path, shutil
 
-class ArgDescForPaths(Function.ArgDesc):
+class ArgDescForPaths(FuncTools.Abstraction.ArgDesc):
 	OTHER = 4
 	FILE = 5
 	FOLDER = 6
 
-class PathFuncsAbstract(Function.Descriptor):
+class PathFuncsAbstract(FuncTools.Abstraction.Descriptor):
 	def isLocal(self, name):
 		assert name not in self.REMOTE_UNSUPPORTED
 		assert name in self.LOCAL + self.REMOTE

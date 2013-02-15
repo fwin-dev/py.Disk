@@ -1,4 +1,4 @@
-from Lang import abstractmethod
+from Lang.FuncTools.Abstraction import abstractmethod
 
 import os.path
 from fnmatch import fnmatchcase
