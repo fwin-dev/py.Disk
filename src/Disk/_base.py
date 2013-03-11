@@ -1,14 +1,15 @@
-from Lang import FuncTools
+from __future__ import print_function
+from Lang.FuncTools import Abstraction
 
 from abc import ABCMeta, abstractmethod
 import os, os.path, shutil
 
-class ArgDescForPaths(FuncTools.Abstraction.ArgDesc):
+class ArgDescForPaths(Abstraction.ArgDesc):
 	OTHER = 4
 	FILE = 5
 	FOLDER = 6
 
-class PathFuncsAbstract(FuncTools.Abstraction.Descriptor):
+class PathFuncsAbstract(Abstraction.Descriptor):
 	def isLocal(self, name):
 		assert name not in self.REMOTE_UNSUPPORTED
 		assert name in self.LOCAL + self.REMOTE
@@ -137,8 +138,9 @@ class File(object):
 	
 	def isWritable(self):
 		return not self.isClosed() and (self.mode.startswith("w") or self.mode.startswith("a") or self.mode.startswith("r+"))
+	@abstractmethod
 	def isClosed(self):
-		return self.closed
+		pass
 	
 	def destruct(self):
 		if not self.isClosed():
@@ -335,7 +337,7 @@ class FilePath(PathAbstract):
 		with self.asFile("wb"):
 			pass
 	
-	def _storeData(self, destFileObj, shouldCopyDates):
+	def _storeData(self, destFileObj, shouldCopyDates, destFilePath):
 		wasClosed = destFileObj.closed
 		if wasClosed:	destFileObj.reopen()
 		else:			destFileObj.seek(0)
@@ -357,8 +359,10 @@ class FilePath(PathAbstract):
 		destFilePath.utime(self.getatime(), self.getmtime())
 	
 	def copy(self, destFilePath, shouldCopyDates):
+		if destFilePath.isdir():
+			destFilePath = destFilePath.joinFile(str(self.basename()))
 		destFileObj = self._preCopy_getFileObj(destFilePath, shouldCopyDates)
-		self._storeData(destFileObj, shouldCopyDates)
+		self._storeData(destFileObj, shouldCopyDates, destFilePath)
 	
 	def _preCopy_getFileObj(self, destFilePath, shouldCopyDates):
 		destFilePath.create()
@@ -381,6 +385,12 @@ class FolderPath(PathAbstract):
 		"""
 		PathAbstract.__init__(self, path)
 		self._walkerClass = walkerClass
+	def copy(self, destFolderPath, shouldCopyDates=False):
+		destFolderPath.create()
+		for srcSubfolderPath in self.walk(isRecursive=False, wantFiles=False, wantFolders=True):
+			srcSubfolderPath.copy(destFolderPath.joinFolder(str(srcSubfolderPath.basename())))
+		for srcFilePath in self.walk(isRecursive=False, wantFiles=True, wantFolders=False):
+			srcFilePath.copy(destFolderPath, shouldCopyDates)
 	def create(self):
 		"""Create directory if not exists"""
 		if not self.exists():
