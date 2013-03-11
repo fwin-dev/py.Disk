@@ -1,6 +1,7 @@
 from __future__ import print_function
 from Lang.FuncTools import Abstraction
 
+from Lang.Struct import OrderedDict
 from abc import ABCMeta, abstractmethod
 import os, os.path, shutil
 
@@ -115,16 +116,36 @@ class File(object):
 		self.mode = mode
 		self.isDestructed = False
 	
+	def __str__(self, message=None, extraPairDict=None):
+		return self.__repr__(message=message, extraPairDict=extraPairDict)
+	def __repr__(self, valueLabel=None, value=None, extraPairDict=None, message=None):
+		if valueLabel == None:
+			valuePairs = OrderedDict()
+			valuePairs["getPath"] = "'" + self.getPath() + "'"
+			valuePairs["mode"] = self.mode
+			valuePairs["isWritable"] = self.isWritable()
+			valuePairs["isClosed"] = self.isClosed()
+			valuePairs["isDestructed"] = self.isDestructed
+			if extraPairDict != None:
+				valuePairs.update(extraPairDict)
+		else:
+			valuePairs = {valueLabel: value}
+		str_ = ", ".join([name + "=" + str(value) for name, value in valuePairs.iteritems()])
+		
+		if message != None:
+			str_ += message
+		return str_
+	
 	def __enter__(self):
 		self._createdOnOpen = False		# currently unused
 		if not self.getPath().exists():
 			self._createdOnOpen = True
-		
+#		print(repr(self))
 		if self.isClosed():
 			self.reopen()
 		return self
 	
-	def __exit__(self, exc, value, tb):
+	def __exit__(self, exc=None, value=None, tb=None):
 		self.close()
 	
 	@abstractmethod
@@ -136,8 +157,9 @@ class File(object):
 #			raise Exception("Must close file before attempting to perform os.path or os equivalent operations")
 		return self._getPath()
 	
-	def isWritable(self):
-		return not self.isClosed() and (self.mode.startswith("w") or self.mode.startswith("a") or self.mode.startswith("r+"))
+	def isWritable(self, ignoreClosedState=False):
+		return (ignoreClosedState or not self.isClosed()) and \
+			(self.mode.startswith("w") or self.mode.startswith("a") or self.mode.startswith("r+"))
 	@abstractmethod
 	def isClosed(self):
 		pass
@@ -145,7 +167,7 @@ class File(object):
 	def destruct(self):
 		if not self.isClosed():
 			self.close()
-		self.isDesructed = True
+		self.isDestructed = True
 	def reopen(self, mode=None):
 		assert self.isClosed()
 		if mode != None:
@@ -180,9 +202,9 @@ class PathAbstract(object):
 	def asStr(self):
 		return self.path
 	def __str__(self):
-		return self.path
-	def __repr__(self):
-		return self.path
+		return self.asStr()
+	def __repr__(self, message=None):
+		return self.path + (": " + message if message != None else "")
 	
 	def __add__(self, right):
 		return self._addMaker(self.path + self._addMaker_getPath(right))
@@ -338,7 +360,7 @@ class FilePath(PathAbstract):
 			pass
 	
 	def _storeData(self, destFileObj, shouldCopyDates, destFilePath):
-		wasClosed = destFileObj.closed
+		wasClosed = destFileObj.isClosed()
 		if wasClosed:	destFileObj.reopen()
 		else:			destFileObj.seek(0)
 		
@@ -348,8 +370,9 @@ class FilePath(PathAbstract):
 		with self.asFile("rb") as sourceFileObj:
 			shutil.copyfileobj(sourceFileObj, destFileObj, 1024*100)
 		
+		destFileObj.close()
+#		print(self.__repr__("size right after copy/move:" + str(destFilePath.getsize())))
 		if shouldCopyDates:
-			destFileObj.close()
 			self.copyDates(destFileObj.getPath())
 		else:
 			if not wasClosed and hasattr(destFileObj, "reopen"):
@@ -394,7 +417,7 @@ class FolderPath(PathAbstract):
 	def create(self):
 		"""Create directory if not exists"""
 		if not self.exists():
-			return self.mkdir()
+			return self.mkdirs()
 	@abstractmethod
 	def rmtree(self):
 		pass
