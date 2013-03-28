@@ -1,6 +1,6 @@
 <map id="Disk.Local._Paths.FilePath" name="Disk.Local._Paths.FilePath">
 <area shape="rect" id="node2" href="$class_disk_1_1_local_1_1___paths_1_1_path_abstract.html" title="Abstract concept of a file or folder path." alt="" coords="5,417,205,495"/>
-<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_file_path.html" title="{Disk._base.FilePath\n||+ __init__()\l+ asFile()\l+ create()\l+ copyDates()\l+ copy()\l+ move()\l+ rename()\l}" alt="" coords="230,373,364,539"/>
-<area shape="rect" id="node6" href="$class_disk_1_1__base_1_1_path_abstract.html" title="{Disk._base.PathAbstract\n|+ path\l|+ __init__()\l+ asStr()\l+ __str__()\l+ __repr__()\l+ __add__()\l+ __radd__()\l+ __eq__()\l+ __hash__()\l+ __getattr__()\l}" alt="" coords="215,131,379,325"/>
-<area shape="rect" id="node8" href="$classobject.html" title="{object\n||}" alt="" coords="269,5,325,83"/>
+<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file_path.html" title="{Disk._base.FilePath\n||+ __init__()\l+ asFile()\l+ create()\l+ copyDates()\l+ copy()\l+ move()\l+ rename()\l}" alt="" coords="230,373,364,539"/>
+<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_path_abstract.html" title="{Disk._base.PathAbstract\n|+ path\l|+ __init__()\l+ asStr()\l+ __str__()\l+ __repr__()\l+ __add__()\l+ __radd__()\l+ __eq__()\l+ __hash__()\l+ __getattr__()\l}" alt="" coords="215,131,379,325"/>
+<area shape="rect" id="node5" href="$classobject.html" title="{object\n||}" alt="" coords="269,5,325,83"/>
 </map>

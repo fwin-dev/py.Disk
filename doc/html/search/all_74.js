@@ -4,7 +4,6 @@ var searchData=
   ['tempfile_2epy',['TempFile.py',['../_temp_file_8py.html',1,'']]],
   ['tempfolder_2epy',['TempFolder.py',['../_temp_folder_8py.html',1,'']]],
   ['tempfolderpath',['TempFolderPath',['../class_disk_1_1_temp_folder_1_1_temp_folder_path.html',1,'Disk::TempFolder']]],
-  ['test_2epy',['test.py',['../test_8py.html',1,'']]],
   ['test_5femptyfile',['test_emptyFile',['../class_disk_1_1_unit_tests_1_1_s_s_hfile.html#a300e8fefa3b589967bcf46001f2819ee',1,'Disk::UnitTests::SSHfile']]],
   ['test_5futime',['test_utime',['../class_disk_1_1_unit_tests_1_1_test_o_sfuncs.html#a11b32ddeca7a582020e2d49987d765fe',1,'Disk::UnitTests::TestOSfuncs']]],
   ['test_5fwalk_5ffolder_5fnorecurse',['test_walk_folder_noRecurse',['../class_disk_1_1_unit_tests_1_1_walker.html#a6a23c61c49f08379a24493a39206d9f7',1,'Disk::UnitTests::Walker']]],

@@ -112,7 +112,8 @@ $(document).ready(function(){initNavTree('class_disk_1_1__base_1_1_o_s_path_func
 <div class="dynheader">
 Inheritance diagram for Disk._base.OSPathFuncs:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_disk_1_1__base_1_1_o_s_path_funcs__inherit__graph.svg" width="254" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_disk_1_1__base_1_1_o_s_path_funcs__inherit__graph.svg" width="254" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -162,7 +163,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00040">40</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00042">42</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3cdddbfea9845cef64df282f57f485ae"></a>
 <div class="memitem">
@@ -178,29 +179,29 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00041">41</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a3cdddbfea9845cef64df282f57f485ae">   41</a></span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a1f6509405f0154b6f82cb66380bde3ff">   42</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a3cdddbfea9845cef64df282f57f485ae">__init__</a>(self):</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae8f2b84c6da0b243dbe40acce3d2f574">   43</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a1f6509405f0154b6f82cb66380bde3ff">SINGLE_PATH_ARG</a> = (<span class="stringliteral">&quot;abspath&quot;</span>, <span class="stringliteral">&quot;basename&quot;</span>, <span class="stringliteral">&quot;dirname&quot;</span>, <span class="stringliteral">&quot;exists&quot;</span>, <span class="stringliteral">&quot;lexists&quot;</span>, <span class="stringliteral">&quot;expanduser&quot;</span>, <span class="stringliteral">&quot;expandvars&quot;</span>, <span class="stringliteral">&quot;getatime&quot;</span>, <span class="stringliteral">&quot;getctime&quot;</span>, <span class="stringliteral">&quot;getmtime&quot;</span>, <span class="stringliteral">&quot;getsize&quot;</span>, <span class="stringliteral">&quot;isabs&quot;</span>, <span class="stringliteral">&quot;isfile&quot;</span>, <span class="stringliteral">&quot;isdir&quot;</span>, <span class="stringliteral">&quot;islink&quot;</span>, <span class="stringliteral">&quot;ismount&quot;</span>, <span class="stringliteral">&quot;normcase&quot;</span>, <span class="stringliteral">&quot;normpath&quot;</span>, <span class="stringliteral">&quot;realpath&quot;</span>, <span class="stringliteral">&quot;split&quot;</span>, <span class="stringliteral">&quot;splitdrive&quot;</span>, <span class="stringliteral">&quot;splitext&quot;</span>, <span class="stringliteral">&quot;splitunc&quot;</span>)</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aa999b1264d3b93b5f0e0df545fb1106f">   44</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae8f2b84c6da0b243dbe40acce3d2f574">MULTI_PATH_ARG</a> = (<span class="stringliteral">&quot;commonprefix&quot;</span>, <span class="stringliteral">&quot;join&quot;</span>, <span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>, <span class="stringliteral">&quot;relpath&quot;</span>, <span class="stringliteral">&quot;samefile&quot;</span>)</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">   45</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aa999b1264d3b93b5f0e0df545fb1106f">SPECIAL_PATH_ARG</a> = tuple(<span class="stringliteral">&quot;walk&quot;</span>)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">ALL_FUNCS</a> = self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aa999b1264d3b93b5f0e0df545fb1106f">SPECIAL_PATH_ARG</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a1f6509405f0154b6f82cb66380bde3ff">SINGLE_PATH_ARG</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae8f2b84c6da0b243dbe40acce3d2f574">MULTI_PATH_ARG</a></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a9f311c33472f711b30f5da19195b25ad">   48</a></span>&#160;        <span class="comment"># these will return the same result on any linux machine, so therefore can be run locally</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a9f311c33472f711b30f5da19195b25ad">LOCAL</a> = (<span class="stringliteral">&quot;basename&quot;</span>, <span class="stringliteral">&quot;dirname&quot;</span>, <span class="stringliteral">&quot;isabs&quot;</span>, <span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>, <span class="stringliteral">&quot;normcase&quot;</span>, <span class="stringliteral">&quot;normpath&quot;</span>, <span class="stringliteral">&quot;split&quot;</span>, <span class="stringliteral">&quot;splitdrive&quot;</span>, <span class="stringliteral">&quot;splitext&quot;</span>, <span class="stringliteral">&quot;splitunc&quot;</span>)</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a0ba4ba1430146cb70a27c15d6c94a1e8">   50</a></span>&#160;        <span class="comment"># these are machine dependent and must be run remotely</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aaf47d4e3a39757e8ec48d7aeae1b9cab">   51</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a0ba4ba1430146cb70a27c15d6c94a1e8">REMOTE</a> = (<span class="stringliteral">&quot;join&quot;</span>, <span class="stringliteral">&quot;abspath&quot;</span>, <span class="stringliteral">&quot;exists&quot;</span>, <span class="stringliteral">&quot;lexists&quot;</span>, <span class="stringliteral">&quot;expanduser&quot;</span>, <span class="stringliteral">&quot;expandvars&quot;</span>, <span class="stringliteral">&quot;getatime&quot;</span>, <span class="stringliteral">&quot;getmtime&quot;</span>, <span class="stringliteral">&quot;getctime&quot;</span>, <span class="stringliteral">&quot;getsize&quot;</span>, <span class="stringliteral">&quot;isfile&quot;</span>, <span class="stringliteral">&quot;isdir&quot;</span>, <span class="stringliteral">&quot;islink&quot;</span>, <span class="stringliteral">&quot;ismount&quot;</span>, <span class="stringliteral">&quot;realpath&quot;</span>, <span class="stringliteral">&quot;relpath&quot;</span>, <span class="stringliteral">&quot;samefile&quot;</span>)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aaf47d4e3a39757e8ec48d7aeae1b9cab">REMOTE_UNSUPPORTED</a> = (<span class="stringliteral">&quot;walk&quot;</span>)</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a23339a4a8284686a809c645a9278d8fd">   53</a></span>&#160;        </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a13a88b0736364c82d960a01928e73cfa">   54</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a23339a4a8284686a809c645a9278d8fd">INPUTARGS_FILE</a> = tuple()</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae6f508596b614459764a220728b5225e">   55</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a13a88b0736364c82d960a01928e73cfa">INPUTARGS_FOLDER</a> = tuple(<span class="stringliteral">&quot;walk&quot;</span>)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae6f508596b614459764a220728b5225e">INPUTARGS_FILE_FOLDER</a> = tuple(filter(<span class="keyword">lambda</span> x: x <span class="keywordflow">not</span> <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a23339a4a8284686a809c645a9278d8fd">INPUTARGS_FILE</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a13a88b0736364c82d960a01928e73cfa">INPUTARGS_FOLDER</a>, self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">ALL_FUNCS</a>))</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a503a229c7bea42e01b6a044be3ec1211">   57</a></span>&#160;        </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a55d6d447edf2b2983adaea1e48f9d166">   58</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a503a229c7bea42e01b6a044be3ec1211">RETURN_FILE</a> = tuple()</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a2e5d7e3c4d719a44c7611e5ab6c0bddd">   59</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a55d6d447edf2b2983adaea1e48f9d166">RETURN_FOLDER</a> = (<span class="stringliteral">&quot;commonprefix&quot;</span>, <span class="stringliteral">&quot;dirname&quot;</span>)</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#adbfcebf4699daa15c0a42d5ed26a3379">   60</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a2e5d7e3c4d719a44c7611e5ab6c0bddd">RETURN_SAME_AS_INPUT_TYPE</a> = (<span class="stringliteral">&quot;abspath&quot;</span>, <span class="stringliteral">&quot;basename&quot;</span>, <span class="stringliteral">&quot;expanduser&quot;</span>, <span class="stringliteral">&quot;expandvars&quot;</span>, <span class="stringliteral">&quot;normcase&quot;</span>, <span class="stringliteral">&quot;normpath&quot;</span>, <span class="stringliteral">&quot;realpath&quot;</span>, <span class="stringliteral">&quot;relpath&quot;</span>)</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#afe923ab2058acf2d6803f073c30e18d7">   61</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#adbfcebf4699daa15c0a42d5ed26a3379">RETURN_SPECIAL</a> = (<span class="stringliteral">&quot;join&quot;</span>, <span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>, <span class="stringliteral">&quot;split&quot;</span>, <span class="stringliteral">&quot;splitdrive&quot;</span>, <span class="stringliteral">&quot;splitext&quot;</span>, <span class="stringliteral">&quot;splitunc&quot;</span>, <span class="stringliteral">&quot;walk&quot;</span>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#afe923ab2058acf2d6803f073c30e18d7">RETURN_OTHER</a> = tuple(filter(<span class="keyword">lambda</span> x: x <span class="keywordflow">not</span> <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a503a229c7bea42e01b6a044be3ec1211">RETURN_FILE</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a55d6d447edf2b2983adaea1e48f9d166">RETURN_FOLDER</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a2e5d7e3c4d719a44c7611e5ab6c0bddd">RETURN_SAME_AS_INPUT_TYPE</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#adbfcebf4699daa15c0a42d5ed26a3379">RETURN_SPECIAL</a>, self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">ALL_FUNCS</a>))</div>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00043">43</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a3cdddbfea9845cef64df282f57f485ae">   43</a></span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a1f6509405f0154b6f82cb66380bde3ff">   44</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a3cdddbfea9845cef64df282f57f485ae">__init__</a>(self):</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae8f2b84c6da0b243dbe40acce3d2f574">   45</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a1f6509405f0154b6f82cb66380bde3ff">SINGLE_PATH_ARG</a> = (<span class="stringliteral">&quot;abspath&quot;</span>, <span class="stringliteral">&quot;basename&quot;</span>, <span class="stringliteral">&quot;dirname&quot;</span>, <span class="stringliteral">&quot;exists&quot;</span>, <span class="stringliteral">&quot;lexists&quot;</span>, <span class="stringliteral">&quot;expanduser&quot;</span>, <span class="stringliteral">&quot;expandvars&quot;</span>, <span class="stringliteral">&quot;getatime&quot;</span>, <span class="stringliteral">&quot;getctime&quot;</span>, <span class="stringliteral">&quot;getmtime&quot;</span>, <span class="stringliteral">&quot;getsize&quot;</span>, <span class="stringliteral">&quot;isabs&quot;</span>, <span class="stringliteral">&quot;isfile&quot;</span>, <span class="stringliteral">&quot;isdir&quot;</span>, <span class="stringliteral">&quot;islink&quot;</span>, <span class="stringliteral">&quot;ismount&quot;</span>, <span class="stringliteral">&quot;normcase&quot;</span>, <span class="stringliteral">&quot;normpath&quot;</span>, <span class="stringliteral">&quot;realpath&quot;</span>, <span class="stringliteral">&quot;split&quot;</span>, <span class="stringliteral">&quot;splitdrive&quot;</span>, <span class="stringliteral">&quot;splitext&quot;</span>, <span class="stringliteral">&quot;splitunc&quot;</span>)</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aa999b1264d3b93b5f0e0df545fb1106f">   46</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae8f2b84c6da0b243dbe40acce3d2f574">MULTI_PATH_ARG</a> = (<span class="stringliteral">&quot;commonprefix&quot;</span>, <span class="stringliteral">&quot;join&quot;</span>, <span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>, <span class="stringliteral">&quot;relpath&quot;</span>, <span class="stringliteral">&quot;samefile&quot;</span>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">   47</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aa999b1264d3b93b5f0e0df545fb1106f">SPECIAL_PATH_ARG</a> = tuple(<span class="stringliteral">&quot;walk&quot;</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">ALL_FUNCS</a> = self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aa999b1264d3b93b5f0e0df545fb1106f">SPECIAL_PATH_ARG</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a1f6509405f0154b6f82cb66380bde3ff">SINGLE_PATH_ARG</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae8f2b84c6da0b243dbe40acce3d2f574">MULTI_PATH_ARG</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a9f311c33472f711b30f5da19195b25ad">   50</a></span>&#160;        <span class="comment"># these will return the same result on any linux machine, so therefore can be run locally</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a9f311c33472f711b30f5da19195b25ad">LOCAL</a> = (<span class="stringliteral">&quot;basename&quot;</span>, <span class="stringliteral">&quot;dirname&quot;</span>, <span class="stringliteral">&quot;isabs&quot;</span>, <span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>, <span class="stringliteral">&quot;normcase&quot;</span>, <span class="stringliteral">&quot;normpath&quot;</span>, <span class="stringliteral">&quot;split&quot;</span>, <span class="stringliteral">&quot;splitdrive&quot;</span>, <span class="stringliteral">&quot;splitext&quot;</span>, <span class="stringliteral">&quot;splitunc&quot;</span>)</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a0ba4ba1430146cb70a27c15d6c94a1e8">   52</a></span>&#160;        <span class="comment"># these are machine dependent and must be run remotely</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aaf47d4e3a39757e8ec48d7aeae1b9cab">   53</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a0ba4ba1430146cb70a27c15d6c94a1e8">REMOTE</a> = (<span class="stringliteral">&quot;join&quot;</span>, <span class="stringliteral">&quot;abspath&quot;</span>, <span class="stringliteral">&quot;exists&quot;</span>, <span class="stringliteral">&quot;lexists&quot;</span>, <span class="stringliteral">&quot;expanduser&quot;</span>, <span class="stringliteral">&quot;expandvars&quot;</span>, <span class="stringliteral">&quot;getatime&quot;</span>, <span class="stringliteral">&quot;getmtime&quot;</span>, <span class="stringliteral">&quot;getctime&quot;</span>, <span class="stringliteral">&quot;getsize&quot;</span>, <span class="stringliteral">&quot;isfile&quot;</span>, <span class="stringliteral">&quot;isdir&quot;</span>, <span class="stringliteral">&quot;islink&quot;</span>, <span class="stringliteral">&quot;ismount&quot;</span>, <span class="stringliteral">&quot;realpath&quot;</span>, <span class="stringliteral">&quot;relpath&quot;</span>, <span class="stringliteral">&quot;samefile&quot;</span>)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#aaf47d4e3a39757e8ec48d7aeae1b9cab">REMOTE_UNSUPPORTED</a> = (<span class="stringliteral">&quot;walk&quot;</span>)</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a23339a4a8284686a809c645a9278d8fd">   55</a></span>&#160;        </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a13a88b0736364c82d960a01928e73cfa">   56</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a23339a4a8284686a809c645a9278d8fd">INPUTARGS_FILE</a> = tuple()</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae6f508596b614459764a220728b5225e">   57</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a13a88b0736364c82d960a01928e73cfa">INPUTARGS_FOLDER</a> = tuple(<span class="stringliteral">&quot;walk&quot;</span>)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ae6f508596b614459764a220728b5225e">INPUTARGS_FILE_FOLDER</a> = tuple(filter(<span class="keyword">lambda</span> x: x <span class="keywordflow">not</span> <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a23339a4a8284686a809c645a9278d8fd">INPUTARGS_FILE</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a13a88b0736364c82d960a01928e73cfa">INPUTARGS_FOLDER</a>, self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">ALL_FUNCS</a>))</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a503a229c7bea42e01b6a044be3ec1211">   59</a></span>&#160;        </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a55d6d447edf2b2983adaea1e48f9d166">   60</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a503a229c7bea42e01b6a044be3ec1211">RETURN_FILE</a> = tuple()</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a2e5d7e3c4d719a44c7611e5ab6c0bddd">   61</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a55d6d447edf2b2983adaea1e48f9d166">RETURN_FOLDER</a> = (<span class="stringliteral">&quot;commonprefix&quot;</span>, <span class="stringliteral">&quot;dirname&quot;</span>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#adbfcebf4699daa15c0a42d5ed26a3379">   62</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a2e5d7e3c4d719a44c7611e5ab6c0bddd">RETURN_SAME_AS_INPUT_TYPE</a> = (<span class="stringliteral">&quot;abspath&quot;</span>, <span class="stringliteral">&quot;basename&quot;</span>, <span class="stringliteral">&quot;expanduser&quot;</span>, <span class="stringliteral">&quot;expandvars&quot;</span>, <span class="stringliteral">&quot;normcase&quot;</span>, <span class="stringliteral">&quot;normpath&quot;</span>, <span class="stringliteral">&quot;realpath&quot;</span>, <span class="stringliteral">&quot;relpath&quot;</span>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#afe923ab2058acf2d6803f073c30e18d7">   63</a></span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#adbfcebf4699daa15c0a42d5ed26a3379">RETURN_SPECIAL</a> = (<span class="stringliteral">&quot;join&quot;</span>, <span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>, <span class="stringliteral">&quot;split&quot;</span>, <span class="stringliteral">&quot;splitdrive&quot;</span>, <span class="stringliteral">&quot;splitext&quot;</span>, <span class="stringliteral">&quot;splitunc&quot;</span>, <span class="stringliteral">&quot;walk&quot;</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#afe923ab2058acf2d6803f073c30e18d7">RETURN_OTHER</a> = tuple(filter(<span class="keyword">lambda</span> x: x <span class="keywordflow">not</span> <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a503a229c7bea42e01b6a044be3ec1211">RETURN_FILE</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a55d6d447edf2b2983adaea1e48f9d166">RETURN_FOLDER</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a2e5d7e3c4d719a44c7611e5ab6c0bddd">RETURN_SAME_AS_INPUT_TYPE</a> + self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#adbfcebf4699daa15c0a42d5ed26a3379">RETURN_SPECIAL</a>, self.<a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#a73c7433e2b62c85ac24c70ecc3a9ec26">ALL_FUNCS</a>))</div>
   </div>
 </div><!-- fragment -->
 </div>
@@ -236,15 +237,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00064">64</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ad2b4df6591e45a6266f992f4ad139ba6">   64</a></span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ad2b4df6591e45a6266f992f4ad139ba6">getBuiltinFunction</a>(cls, funcName, asStr=False):</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> funcName <span class="keywordflow">in</span> (<span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>):</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            funcName = <span class="stringliteral">&quot;join&quot;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> asStr:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> getattr(os.path, funcName)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">assert</span> hasattr(os.path, funcName)</div>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00066">66</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ad2b4df6591e45a6266f992f4ad139ba6">   66</a></span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_o_s_path_funcs.html#ad2b4df6591e45a6266f992f4ad139ba6">getBuiltinFunction</a>(cls, funcName, asStr=False):</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> funcName <span class="keywordflow">in</span> (<span class="stringliteral">&quot;joinFile&quot;</span>, <span class="stringliteral">&quot;joinFolder&quot;</span>):</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            funcName = <span class="stringliteral">&quot;join&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> asStr:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> getattr(os.path, funcName)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">assert</span> hasattr(os.path, funcName)</div>
            <span class="keywordflow">return</span> <span class="stringliteral">&quot;os.path.&quot;</span> + funcName</div>
 </div><!-- fragment -->
 </div>
@@ -260,7 +261,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00045">45</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00047">47</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -274,7 +275,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00053">53</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00055">55</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -288,7 +289,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00055">55</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00057">57</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -302,7 +303,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00054">54</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00056">56</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -316,7 +317,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00048">48</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00050">50</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -330,7 +331,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00043">43</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00045">45</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -344,7 +345,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00050">50</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00052">52</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -358,7 +359,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00051">51</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00053">53</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -372,7 +373,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00057">57</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00059">59</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -386,7 +387,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00058">58</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00060">60</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -400,7 +401,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00061">61</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00063">63</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -414,7 +415,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00059">59</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00061">61</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -428,7 +429,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00060">60</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00062">62</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -442,7 +443,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00042">42</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00044">44</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -456,7 +457,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="__base_8py_source.html#l00044">44</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
+<p>Definition at line <a class="el" href="__base_8py_source.html#l00046">46</a> of file <a class="el" href="__base_8py_source.html">_base.py</a>.</p>
 
 </div>
 </div>
@@ -469,7 +470,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_disk.html">Disk</a></li><li class="navelem"><a class="el" href="namespace_disk_1_1__base.html">_base</a></li><li class="navelem"><a class="el" href="class_disk_1_1__base_1_1_o_s_path_funcs.html">OSPathFuncs</a></li>
-    <li class="footer">Generated on Tue Feb 12 2013 13:55:15 for py.Disk by
+    <li class="footer">Generated on Thu Mar 28 2013 14:28:18 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

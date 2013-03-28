@@ -1,4 +1,5 @@
 <map id="Disk.UnitTests.TestOSfuncs" name="Disk.UnitTests.TestOSfuncs">
-<area shape="rect" id="node2" href="$classunittest_1_1_test_case.html" title="{TestCase\n||}" alt="" coords="5,13,83,91"/>
-<area shape="rect" id="node4" href="$class_disk_1_1_unit_tests_1_1_test_local.html" title="{Disk.UnitTests.TestLocal\n|+ folder\l|+ setUp()\l+ tearDown()\l}" alt="" coords="107,6,265,98"/>
+<area shape="rect" id="node2" href="$classunittest_1_1_test_case.html" title="{TestCase\n||}" alt="" coords="5,139,83,216"/>
+<area shape="rect" id="node3" href="$class_disk_1_1_unit_tests_1_1_test_local.html" title="{Disk.UnitTests.TestLocal\n|+ folder\l|+ setUp()\l+ tearDown()\l}" alt="" coords="107,131,265,223"/>
+<area shape="rect" id="node4" href="$classobject.html" title="{object\n||}" alt="" coords="159,5,215,83"/>
 </map>

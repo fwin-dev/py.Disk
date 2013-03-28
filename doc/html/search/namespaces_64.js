@@ -15,7 +15,6 @@ var searchData=
   ['ssh',['SSH',['../namespace_disk_1_1_s_s_h.html',1,'Disk']]],
   ['tempfile',['TempFile',['../namespace_disk_1_1_temp_file.html',1,'Disk']]],
   ['tempfolder',['TempFolder',['../namespace_disk_1_1_temp_folder.html',1,'Disk']]],
-  ['test',['test',['../namespace_disk_1_1test.html',1,'Disk']]],
   ['unittests',['UnitTests',['../namespace_disk_1_1_unit_tests.html',1,'Disk']]],
   ['walker',['Walker',['../namespace_disk_1_1_walker.html',1,'Disk']]]
 ];

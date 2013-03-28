@@ -1,7 +1,8 @@
 <map id="Disk._base.File.destruct" name="Disk._base.File.destruct">
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file.html#a5801d2db863fa1967d7847917aa757f3" title="Disk._base.File.isClosed" alt="" coords="632,5,792,32"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a78a57bc0b49bb00fe9672e04fba5661c" title="Disk.SSH._File.File.close" alt="" coords="209,31,367,57"/>
-<area shape="rect" id="node7" href="$class_disk_1_1__base_1_1_file.html#af4a79b03f7f30ffdf6be32aaa025f9aa" title="Disk._base.File.isWritable" alt="" coords="417,31,583,57"/>
-<area shape="rect" id="node10" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a2b8fa9d0d909bb45c91d589d2e0cf6d3" title="Uploads the file if changed." alt="" coords="423,81,577,108"/>
-<area shape="rect" id="node12" href="$class_disk_1_1__base_1_1_file.html#a7401ddb8e1f5573402123b8f65b7bc08" title="Disk._base.File.getPath" alt="" coords="635,81,789,108"/>
+<area shape="rect" id="node2" href="$class_disk_1_1__base_1_1_file.html#a5801d2db863fa1967d7847917aa757f3" title="Disk._base.File.isClosed" alt="" coords="867,7,1027,34"/>
+<area shape="rect" id="node3" href="$class_disk_1_1_local_1_1___file_1_1_base_file.html#a4044af9876fda87605d0acd6914d2aa6" title="Disk.Local._File.BaseFile.close" alt="" coords="208,32,400,59"/>
+<area shape="rect" id="node4" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a78a57bc0b49bb00fe9672e04fba5661c" title="Disk.SSH._File.File.close" alt="" coords="225,83,383,110"/>
+<area shape="rect" id="node5" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a2b8fa9d0d909bb45c91d589d2e0cf6d3" title="Uploads the file if changed." alt="" coords="448,83,603,110"/>
+<area shape="rect" id="node6" href="$class_disk_1_1__base_1_1_file.html#af4a79b03f7f30ffdf6be32aaa025f9aa" title="Disk._base.File.isWritable" alt="" coords="651,32,818,59"/>
+<area shape="rect" id="node7" href="$class_disk_1_1__base_1_1_file.html#a7401ddb8e1f5573402123b8f65b7bc08" title="Disk._base.File.getPath" alt="" coords="657,83,812,110"/>
 </map>

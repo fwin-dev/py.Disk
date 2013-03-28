@@ -1,5 +1,5 @@
 <map id="Disk.Local._File.BaseFile" name="Disk.Local._File.BaseFile">
-<area shape="rect" id="node7" href="$class_disk_1_1_local_1_1___file_1_1_file.html" title="Implementation of BaseFile using a FilePath instance to store the path." alt="" coords="21,573,149,651"/>
-<area shape="rect" id="node2" href="$class_disk_1_1__base_1_1_file.html" title="{Disk._base.File\n|+ mode\l+ isDestructed\l+ isDesructed\l|+ __init__()\l+ __enter__()\l+ __exit__()\l+ getPath()\l+ isWritable()\l+ isClosed()\l+ destruct()\l+ reopen()\l}" alt="" coords="31,131,139,341"/>
-<area shape="rect" id="node4" href="$classobject.html" title="{object\n||}" alt="" coords="57,5,113,83"/>
+<area shape="rect" id="node4" href="$class_disk_1_1_local_1_1___file_1_1_file.html" title="Implementation of BaseFile using a FilePath instance to store the path." alt="" coords="21,632,149,709"/>
+<area shape="rect" id="node2" href="$class_disk_1_1__base_1_1_file.html" title="{Disk._base.File\n|+ mode\l+ isDestructed\l|+ __init__()\l+ __str__()\l+ __repr__()\l+ __enter__()\l+ __exit__()\l+ getPath()\l+ isWritable()\l+ isClosed()\l+ destruct()\l+ reopen()\l}" alt="" coords="31,131,139,355"/>
+<area shape="rect" id="node3" href="$classobject.html" title="{object\n||}" alt="" coords="57,5,113,83"/>
 </map>

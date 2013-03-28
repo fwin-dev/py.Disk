@@ -6,7 +6,7 @@ if sys.version_info[0] >= 3 or sys.version_info <= (2,5):
 
 setup(
 	name = "py.Disk",
-	version = "0.5.1-dev936",
+	version = "0.5.1",
 	description = "Object oriented API for working with files and folders",
 	author = "Jesse Cowles",
 	author_email = "jcowles@indigital.net",

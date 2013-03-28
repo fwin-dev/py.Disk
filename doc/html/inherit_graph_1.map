@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_function_1_1_descriptor.html" title="Descriptor" alt="" coords="6,31,85,57"/>
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_path_funcs_abstract.html" title="Disk._base.PathFuncsAbstract" alt="" coords="134,31,333,57"/>
-<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_o_s_funcs.html" title="Disk._base.OSFuncs" alt="" coords="395,5,539,32"/>
-<area shape="rect" id="node7" href="$class_disk_1_1__base_1_1_o_s_path_funcs.html" title="Disk._base.OSPathFuncs" alt="" coords="381,56,552,83"/>
+<area shape="rect" id="node1" href="$class_abstraction_1_1_descriptor.html" title="Descriptor" alt="" coords="6,31,85,57"/>
+<area shape="rect" id="node2" href="$class_disk_1_1__base_1_1_path_funcs_abstract.html" title="Disk._base.PathFuncsAbstract" alt="" coords="134,31,333,57"/>
+<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_o_s_funcs.html" title="Disk._base.OSFuncs" alt="" coords="395,5,539,32"/>
+<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_o_s_path_funcs.html" title="Disk._base.OSPathFuncs" alt="" coords="381,56,552,83"/>
 </map>

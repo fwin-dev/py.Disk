@@ -1,6 +1,7 @@
 var class_disk_1_1__base_1_1_folder_path =
 [
     [ "__init__", "class_disk_1_1__base_1_1_folder_path.html#a3ee03c83b40d1634da4da9434769fe6a", null ],
+    [ "copy", "class_disk_1_1__base_1_1_folder_path.html#a6625c9238dfe7d86d34625e4e7730922", null ],
     [ "create", "class_disk_1_1__base_1_1_folder_path.html#a64dc1a80534c1a382568faca5474aa25", null ],
     [ "mkdirs", "class_disk_1_1__base_1_1_folder_path.html#ae2e8008ca903fe80b5ff50786fda7789", null ],
     [ "remove", "class_disk_1_1__base_1_1_folder_path.html#aeda5e21bb79e9c7d6240ec96f2cc7aee", null ],

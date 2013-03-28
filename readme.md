@@ -41,6 +41,7 @@ In addition, some additional functions (many from `shutil`) are also available:
   - `copy(destinationFilePath, shouldCopyDates)`
   - `create()` - Similar to `touch`
 - For `FolderPath` objects:
+  - `copy(destinationFilePath)`
   - `remove(isRecursive)`
   - `mkdirs()`/`makedirs()` - Same as `os.path.makedirs`
   - `walk(...)` - See below

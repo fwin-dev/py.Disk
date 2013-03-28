@@ -1,10 +1,10 @@
 var hierarchy =
 [
     [ "Disk.ConfigFile.Parser_m1._ConfigLine", "class_disk_1_1_config_file_1_1_parser__m1_1_1___config_line.html", null ],
-    [ "ArgDesc", "class_function_1_1_arg_desc.html", [
+    [ "ArgDesc", "class_abstraction_1_1_arg_desc.html", [
       [ "Disk._base.ArgDescForPaths", "class_disk_1_1__base_1_1_arg_desc_for_paths.html", null ]
     ] ],
-    [ "Descriptor", "class_function_1_1_descriptor.html", [
+    [ "Descriptor", "class_abstraction_1_1_descriptor.html", [
       [ "Disk._base.PathFuncsAbstract", "class_disk_1_1__base_1_1_path_funcs_abstract.html", [
         [ "Disk._base.OSFuncs", "class_disk_1_1__base_1_1_o_s_funcs.html", null ],
         [ "Disk._base.OSPathFuncs", "class_disk_1_1__base_1_1_o_s_path_funcs.html", null ]
@@ -30,6 +30,14 @@ var hierarchy =
           [ "Disk.Local._Paths.FolderPath", "class_disk_1_1_local_1_1___paths_1_1_folder_path.html", null ],
           [ "Disk.SSH._Paths.FolderPath", "class_disk_1_1_s_s_h_1_1___paths_1_1_folder_path.html", null ]
         ] ]
+      ] ],
+      [ "Disk.UnitTests.TestLocal", "class_disk_1_1_unit_tests_1_1_test_local.html", [
+        [ "Disk.UnitTests.LocalWalker", "class_disk_1_1_unit_tests_1_1_local_walker.html", null ],
+        [ "Disk.UnitTests.TestOSfuncs", "class_disk_1_1_unit_tests_1_1_test_o_sfuncs.html", null ]
+      ] ],
+      [ "Disk.UnitTests.TestSSH", "class_disk_1_1_unit_tests_1_1_test_s_s_h.html", [
+        [ "Disk.UnitTests.SSHfile", "class_disk_1_1_unit_tests_1_1_s_s_hfile.html", null ],
+        [ "Disk.UnitTests.SSHwalker", "class_disk_1_1_unit_tests_1_1_s_s_hwalker.html", null ]
       ] ]
     ] ],
     [ "Disk.Local._Paths.PathAbstract", "class_disk_1_1_local_1_1___paths_1_1_path_abstract.html", [
@@ -47,14 +55,6 @@ var hierarchy =
       [ "Disk.UnitTests.SSHwalker", "class_disk_1_1_unit_tests_1_1_s_s_hwalker.html", null ],
       [ "Disk.UnitTests.TestOSfuncs", "class_disk_1_1_unit_tests_1_1_test_o_sfuncs.html", null ]
     ] ],
-    [ "Disk.UnitTests.TestLocal", "class_disk_1_1_unit_tests_1_1_test_local.html", [
-      [ "Disk.UnitTests.LocalWalker", "class_disk_1_1_unit_tests_1_1_local_walker.html", null ],
-      [ "Disk.UnitTests.TestOSfuncs", "class_disk_1_1_unit_tests_1_1_test_o_sfuncs.html", null ]
-    ] ],
-    [ "Disk.UnitTests.TestSSH", "class_disk_1_1_unit_tests_1_1_test_s_s_h.html", [
-      [ "Disk.UnitTests.SSHfile", "class_disk_1_1_unit_tests_1_1_s_s_hfile.html", null ],
-      [ "Disk.UnitTests.SSHwalker", "class_disk_1_1_unit_tests_1_1_s_s_hwalker.html", null ]
-    ] ],
     [ "Disk.UnitTests.Walker", "class_disk_1_1_unit_tests_1_1_walker.html", [
       [ "Disk.UnitTests.LocalWalker", "class_disk_1_1_unit_tests_1_1_local_walker.html", null ],
       [ "Disk.UnitTests.SSHwalker", "class_disk_1_1_unit_tests_1_1_s_s_hwalker.html", null ]
@@ -64,7 +64,7 @@ var hierarchy =
       [ "Disk.SSH._Walker.SSHFolderWalker", "class_disk_1_1_s_s_h_1_1___walker_1_1_s_s_h_folder_walker.html", null ]
     ] ],
     [ "Disk.CompressedFile.ZipFile", "class_disk_1_1_compressed_file_1_1_zip_file.html", null ],
-    [ "BaseFile", null, [
+    [ "File", null, [
       [ "Disk.TempFile.NamedSecureTempFile", "class_disk_1_1_temp_file_1_1_named_secure_temp_file.html", null ]
     ] ],
     [ "FolderPath", null, [

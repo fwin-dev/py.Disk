@@ -114,7 +114,8 @@ $(document).ready(function(){initNavTree('class_disk_1_1_local_1_1___paths_1_1_f
 <div class="dynheader">
 Inheritance diagram for Disk.Local._Paths.FilePath:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_disk_1_1_local_1_1___paths_1_1_file_path__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_disk_1_1_local_1_1___paths_1_1_file_path__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -246,7 +247,8 @@ Additional Inherited Members</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_disk_1_1_local_1_1___paths_1_1_file_path_afab16ed167f1dbef71a86f2aaaa34b71_cgraph.svg" width="464" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_disk_1_1_local_1_1___paths_1_1_file_path_afab16ed167f1dbef71a86f2aaaa34b71_cgraph.svg" width="464" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </p>
 
@@ -283,7 +285,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="class_disk_1_1_local_1_1___paths_1_1_file_path.html#ac14ea9d5054f6368f8e12c53740c8b66">   53</a></span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_local_1_1___paths_1_1_file_path.html#ac14ea9d5054f6368f8e12c53740c8b66" title="Moves a file to destFilePath.">move</a>(self, destFilePath):</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> isinstance(destFilePath, self.<a class="code" href="class_disk_1_1__base_1_1_path_abstract.html#ac4d43adc75eae02351904b68c8a540d0">__class__</a>):    <span class="comment"># shortcut for when file is on same drive - don&#39;t do copy then delete</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            OS.runCMD(<span class="stringliteral">&quot;mv %s %s&quot;</span>, (self, destFilePath))</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            OS.runCMD(<span class="stringliteral">&quot;mv %s %s&quot;</span>, (str(self), str(destFilePath)))</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> _base.FilePath.move(self, destFilePath)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
@@ -300,7 +302,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_disk.html">Disk</a></li><li class="navelem"><a class="el" href="namespace_disk_1_1_local.html">Local</a></li><li class="navelem"><a class="el" href="namespace_disk_1_1_local_1_1___paths.html">_Paths</a></li><li class="navelem"><a class="el" href="class_disk_1_1_local_1_1___paths_1_1_file_path.html">FilePath</a></li>
-    <li class="footer">Generated on Tue Feb 12 2013 13:55:18 for py.Disk by
+    <li class="footer">Generated on Thu Mar 28 2013 14:28:22 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

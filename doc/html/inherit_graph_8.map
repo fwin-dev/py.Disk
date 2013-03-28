@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_disk_1_1_walker_1_1_walker_abstract.html" title="Gets a list of files and/or folders in a folder." alt="" coords="5,45,184,72"/>
-<area shape="rect" id="node3" href="$class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html" title="Implementation of WalkerAbstract for folders on the local system." alt="" coords="245,5,408,46"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_s_s_h_1_1___walker_1_1_s_s_h_folder_walker.html" title="Disk.SSH._Walker.SSHFolder\lWalker" alt="" coords="232,70,421,111"/>
+<area shape="rect" id="node1" href="$class_exception.html" title="Exception" alt="" coords="6,45,85,72"/>
+<area shape="rect" id="node2" href="$class_disk_1_1_compressed_file_1_1_unrecognized_format.html" title="Disk.CompressedFile.Unrecognized\lFormat" alt="" coords="134,5,354,46"/>
+<area shape="rect" id="node3" href="$class_disk_1_1_config_file_1_1_parser__m1_1_1_parse_exception.html" title="Disk.ConfigFile.Parser\l_m1.ParseException" alt="" coords="172,70,316,111"/>
 </map>

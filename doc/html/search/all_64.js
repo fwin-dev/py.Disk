@@ -10,7 +10,7 @@ var searchData=
   ['compressedfile',['CompressedFile',['../namespace_disk_1_1_compressed_file.html',1,'Disk']]],
   ['configfile',['ConfigFile',['../namespace_disk_1_1_config_file.html',1,'Disk']]],
   ['delete',['delete',['../class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a144a339ea171eaaf332a9abb282cd74d',1,'Disk::TempFile::NamedSecureTempFile']]],
-  ['descriptor',['Descriptor',['../class_function_1_1_descriptor.html',1,'']]],
+  ['descriptor',['Descriptor',['../class_abstraction_1_1_descriptor.html',1,'']]],
   ['destruct',['destruct',['../class_disk_1_1__base_1_1_file.html#ababdfcceed76d07a67803fb4b7272e4d',1,'Disk._base.File.destruct()'],['../class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a7274f74c47a23352b500d48a00bfe0a6',1,'Disk.TempFile.NamedSecureTempFile.destruct()']]],
   ['dir',['dir',['../class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892',1,'Disk::TempFile::NamedSecureTempFile']]],
   ['disk',['Disk',['../namespace_disk.html',1,'']]],
@@ -19,7 +19,6 @@ var searchData=
   ['ssh',['SSH',['../namespace_disk_1_1_s_s_h.html',1,'Disk']]],
   ['tempfile',['TempFile',['../namespace_disk_1_1_temp_file.html',1,'Disk']]],
   ['tempfolder',['TempFolder',['../namespace_disk_1_1_temp_folder.html',1,'Disk']]],
-  ['test',['test',['../namespace_disk_1_1test.html',1,'Disk']]],
   ['unittests',['UnitTests',['../namespace_disk_1_1_unit_tests.html',1,'Disk']]],
   ['walker',['Walker',['../namespace_disk_1_1_walker.html',1,'Disk']]]
 ];

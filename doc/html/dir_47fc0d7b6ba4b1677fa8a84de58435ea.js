@@ -15,7 +15,6 @@ var dir_47fc0d7b6ba4b1677fa8a84de58435ea =
     [ "TempFolder.py", "_temp_folder_8py.html", [
       [ "TempFolderPath", "class_disk_1_1_temp_folder_1_1_temp_folder_path.html", "class_disk_1_1_temp_folder_1_1_temp_folder_path" ]
     ] ],
-    [ "test.py", "test_8py.html", null ],
     [ "UnitTests.py", "_unit_tests_8py.html", [
       [ "PermBits", "class_disk_1_1_unit_tests_1_1_perm_bits.html", "class_disk_1_1_unit_tests_1_1_perm_bits" ],
       [ "TestSSH", "class_disk_1_1_unit_tests_1_1_test_s_s_h.html", "class_disk_1_1_unit_tests_1_1_test_s_s_h" ],

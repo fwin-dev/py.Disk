@@ -1,4 +1,6 @@
 <map id="Disk.SSH._File.File.flush" name="Disk.SSH._File.File.flush">
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file.html#a7401ddb8e1f5573402123b8f65b7bc08" title="Disk._base.File.getPath" alt="" coords="208,5,363,32"/>
-<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_file.html#a036d4621c4196403b6a126c9ee1cc0c3" title="Disk._base.File._getPath" alt="" coords="411,5,573,32"/>
+<area shape="rect" id="node2" href="$class_disk_1_1__base_1_1_file.html#af4a79b03f7f30ffdf6be32aaa025f9aa" title="Disk._base.File.isWritable" alt="" coords="209,5,375,32"/>
+<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_file.html#a7401ddb8e1f5573402123b8f65b7bc08" title="Disk._base.File.getPath" alt="" coords="215,56,369,83"/>
+<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file.html#a5801d2db863fa1967d7847917aa757f3" title="Disk._base.File.isClosed" alt="" coords="425,5,585,32"/>
+<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_file.html#a036d4621c4196403b6a126c9ee1cc0c3" title="Disk._base.File._getPath" alt="" coords="424,56,587,83"/>
 </map>

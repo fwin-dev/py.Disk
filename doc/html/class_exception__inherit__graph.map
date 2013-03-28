@@ -1,4 +1,4 @@
 <map id="Exception" name="Exception">
-<area shape="rect" id="node3" href="$class_disk_1_1_compressed_file_1_1_unrecognized_format.html" title="{Disk.CompressedFile.Unrecognized\lFormat\n||+ __init__()\l}" alt="" coords="5,138,224,230"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_config_file_1_1_parser__m1_1_1_parse_exception.html" title="{Disk.ConfigFile.Parser\l_m1.ParseException\n|+ message\l|+ __init__()\l+ __str__()\l}" alt="" coords="249,131,393,237"/>
+<area shape="rect" id="node2" href="$class_disk_1_1_compressed_file_1_1_unrecognized_format.html" title="{Disk.CompressedFile.Unrecognized\lFormat\n||+ __init__()\l}" alt="" coords="5,138,224,230"/>
+<area shape="rect" id="node3" href="$class_disk_1_1_config_file_1_1_parser__m1_1_1_parse_exception.html" title="{Disk.ConfigFile.Parser\l_m1.ParseException\n|+ message\l|+ __init__()\l+ __str__()\l}" alt="" coords="249,131,393,237"/>
 </map>

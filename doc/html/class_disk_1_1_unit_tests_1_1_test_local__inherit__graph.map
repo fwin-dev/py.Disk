@@ -1,4 +1,5 @@
 <map id="Disk.UnitTests.TestLocal" name="Disk.UnitTests.TestLocal">
-<area shape="rect" id="node3" href="$class_disk_1_1_unit_tests_1_1_local_walker.html" title="{Disk.UnitTests.LocalWalker\n||}" alt="" coords="5,147,179,224"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_unit_tests_1_1_test_o_sfuncs.html" title="{Disk.UnitTests.TestOSfuncs\n||+ test_utime()\l}" alt="" coords="204,147,383,224"/>
+<area shape="rect" id="node3" href="$class_disk_1_1_unit_tests_1_1_local_walker.html" title="{Disk.UnitTests.LocalWalker\n||}" alt="" coords="5,272,179,349"/>
+<area shape="rect" id="node4" href="$class_disk_1_1_unit_tests_1_1_test_o_sfuncs.html" title="{Disk.UnitTests.TestOSfuncs\n||+ test_utime()\l}" alt="" coords="204,272,383,349"/>
+<area shape="rect" id="node2" href="$classobject.html" title="{object\n||}" alt="" coords="164,5,220,83"/>
 </map>

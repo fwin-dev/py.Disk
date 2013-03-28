@@ -1,9 +1,9 @@
 <map id="Disk._base.FilePath.rename" name="Disk._base.FilePath.rename">
-<area shape="rect" id="node3" href="$namespace_disk.html#ad26861325f9aed2a18a55ec91b290472" title="Joins path components to make a file." alt="" coords="277,55,363,81"/>
-<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f" title="Disk._base.FilePath.move" alt="" coords="235,105,405,132"/>
-<area shape="rect" id="node7" href="$class_disk_1_1__base_1_1_file_path.html#a0a96c74909955f79e65ae294895a170c" title="Disk._base.FilePath.copy" alt="" coords="467,77,634,104"/>
-<area shape="rect" id="node13" href="$class_disk_1_1__base_1_1_folder_path.html#aeda5e21bb79e9c7d6240ec96f2cc7aee" title="Remove folder and contents if it exists." alt="" coords="453,132,648,159"/>
-<area shape="rect" id="node9" href="$class_disk_1_1__base_1_1_file_path.html#abb49e5731ed1356e77236c00a49c2e3a" title="Disk._base.FilePath.\l_preCopy_getFileObj" alt="" coords="718,5,861,46"/>
-<area shape="rect" id="node11" href="$class_disk_1_1__base_1_1_file_path.html#ab1a670ae97df6f4053dcbb82d4ced7d1" title="Disk._base.FilePath.\l_storeData" alt="" coords="720,70,859,111"/>
-<area shape="rect" id="node15" href="$class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816" title="Disk._base.FolderPath.rmtree" alt="" coords="696,136,883,163"/>
+<area shape="rect" id="node2" href="$namespace_disk.html#ad26861325f9aed2a18a55ec91b290472" title="Joins path components to make a file." alt="" coords="277,55,363,81"/>
+<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f" title="Disk._base.FilePath.move" alt="" coords="235,105,405,132"/>
+<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_file_path.html#a0a96c74909955f79e65ae294895a170c" title="Disk._base.FilePath.copy" alt="" coords="467,77,634,104"/>
+<area shape="rect" id="node7" href="$class_disk_1_1__base_1_1_folder_path.html#aeda5e21bb79e9c7d6240ec96f2cc7aee" title="Remove folder and contents if it exists." alt="" coords="453,132,648,159"/>
+<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_file_path.html#abb49e5731ed1356e77236c00a49c2e3a" title="Disk._base.FilePath.\l_preCopy_getFileObj" alt="" coords="718,5,861,46"/>
+<area shape="rect" id="node6" href="$class_disk_1_1__base_1_1_file_path.html#ab1a670ae97df6f4053dcbb82d4ced7d1" title="Disk._base.FilePath.\l_storeData" alt="" coords="720,70,859,111"/>
+<area shape="rect" id="node8" href="$class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816" title="Disk._base.FolderPath.rmtree" alt="" coords="696,136,883,163"/>
 </map>

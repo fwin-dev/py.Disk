@@ -115,7 +115,8 @@ $(document).ready(function(){initNavTree('class_disk_1_1_temp_file_1_1_named_sec
 <div class="dynheader">
 Inheritance diagram for Disk.TempFile.NamedSecureTempFile:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_disk_1_1_temp_file_1_1_named_secure_temp_file__inherit__graph.svg" width="192" height="302"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_disk_1_1_temp_file_1_1_named_secure_temp_file__inherit__graph.svg" width="192" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,8 +137,6 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ac7ac4dc683caf4572956014385be12a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a710f10b1e8c6d1c67b459408078af892"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892">dir</a></td></tr>
 <tr class="separator:a710f10b1e8c6d1c67b459408078af892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfff0b970669c1a66e1fdf33f6508ebc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#abfff0b970669c1a66e1fdf33f6508ebc">name</a></td></tr>
-<tr class="separator:abfff0b970669c1a66e1fdf33f6508ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is basically a combination of python's built-in tempfile.NamedTemporaryFile and tempfile.mkstemp. </p>
@@ -197,17 +196,17 @@ tempfile.mkstemp </dd></dl>
 
 <p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00012">12</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#add529479786d9a48a741cc896e8a01cf">   12</a></span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#add529479786d9a48a741cc896e8a01cf">__init__</a>(self, mode=&quot;wb&quot;, suffix=&quot;&quot;, prefix=&quot;py_tmp&quot;, dir=None, delete=True):</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a144a339ea171eaaf332a9abb282cd74d">   14</a></span>&#160;        super(NamedSecureTempFile, self).<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#add529479786d9a48a741cc896e8a01cf">__init__</a>(mode)</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a364d9c7fd7c7e83e2651dcfcfbcc350d">   15</a></span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a144a339ea171eaaf332a9abb282cd74d">delete</a> = delete</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#ac7ac4dc683caf4572956014385be12a0">   16</a></span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a364d9c7fd7c7e83e2651dcfcfbcc350d">suffix</a> = suffix</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892">   17</a></span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#ac7ac4dc683caf4572956014385be12a0">prefix</a> = prefix</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892">dir</a> = dir</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#abfff0b970669c1a66e1fdf33f6508ebc">   19</a></span>&#160;        </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        fd, self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#abfff0b970669c1a66e1fdf33f6508ebc">name</a> = tempfile.mkstemp(self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a364d9c7fd7c7e83e2651dcfcfbcc350d">suffix</a>, self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#ac7ac4dc683caf4572956014385be12a0">prefix</a>, self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892">dir</a>)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        fileLikeObj = os.fdopen(fd, self.mode)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        fileLikeObj.close()</div>
- </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a144a339ea171eaaf332a9abb282cd74d">   13</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#add529479786d9a48a741cc896e8a01cf">__init__</a>(self, mode=&quot;wb&quot;, suffix=&quot;&quot;, prefix=&quot;py_tmp&quot;, dir=None, delete=True):</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a364d9c7fd7c7e83e2651dcfcfbcc350d">   14</a></span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a144a339ea171eaaf332a9abb282cd74d">delete</a> = delete</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#ac7ac4dc683caf4572956014385be12a0">   15</a></span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a364d9c7fd7c7e83e2651dcfcfbcc350d">suffix</a> = suffix</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892">   16</a></span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#ac7ac4dc683caf4572956014385be12a0">prefix</a> = prefix</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892">dir</a> = dir</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        fd, path = tempfile.mkstemp(self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a364d9c7fd7c7e83e2651dcfcfbcc350d">suffix</a>, self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#ac7ac4dc683caf4572956014385be12a0">prefix</a>, self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a710f10b1e8c6d1c67b459408078af892">dir</a>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        fileLikeObj = os.fdopen(fd, mode)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        fileLikeObj.close()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        super(NamedSecureTempFile, self).<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#add529479786d9a48a741cc896e8a01cf">__init__</a>(path, mode)</div>
+   </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,10 +231,9 @@ tempfile.mkstemp </dd></dl>
 <p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00025">25</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a7274f74c47a23352b500d48a00bfe0a6">   25</a></span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a7274f74c47a23352b500d48a00bfe0a6" title="Call when this file is no longer needed.">destruct</a>(self):</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        BaseFile.destruct(self)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        super(NamedSecureTempFile, self).<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a7274f74c47a23352b500d48a00bfe0a6" title="Call when this file is no longer needed.">destruct</a>()</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#a144a339ea171eaaf332a9abb282cd74d">delete</a>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            os.remove(self.<a class="code" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html#abfff0b970669c1a66e1fdf33f6508ebc">name</a>)</div>
-</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            os.remove(self._path)</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -250,7 +248,7 @@ tempfile.mkstemp </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00014">14</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
+<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00013">13</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
 
 </div>
 </div>
@@ -264,21 +262,7 @@ tempfile.mkstemp </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00017">17</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abfff0b970669c1a66e1fdf33f6508ebc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Disk.TempFile.NamedSecureTempFile.name</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00019">19</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
+<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00016">16</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
 
 </div>
 </div>
@@ -292,7 +276,7 @@ tempfile.mkstemp </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00016">16</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
+<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00015">15</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
 
 </div>
 </div>
@@ -306,7 +290,7 @@ tempfile.mkstemp </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00015">15</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
+<p>Definition at line <a class="el" href="_temp_file_8py_source.html#l00014">14</a> of file <a class="el" href="_temp_file_8py_source.html">TempFile.py</a>.</p>
 
 </div>
 </div>
@@ -319,7 +303,7 @@ tempfile.mkstemp </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_disk.html">Disk</a></li><li class="navelem"><a class="el" href="namespace_disk_1_1_temp_file.html">TempFile</a></li><li class="navelem"><a class="el" href="class_disk_1_1_temp_file_1_1_named_secure_temp_file.html">NamedSecureTempFile</a></li>
-    <li class="footer">Generated on Tue Feb 12 2013 13:55:18 for py.Disk by
+    <li class="footer">Generated on Thu Mar 28 2013 14:28:23 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('_unit_tests_8py_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">#       self.assert_(parentPerms == filePerms, str(parentPerms) + &quot; == &quot; + str(filePerms))</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html">TestSSH</a>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html">TestSSH</a>(<a class="code" href="classobject.html">object</a>):</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a28839023fa24aa4e25da93dbe4d2c2e9">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a28839023fa24aa4e25da93dbe4d2c2e9">setUp</a>(self):</div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a516ae64fea679e760123640674f3ab70">   40</a></span>&#160;        self.<a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a516ae64fea679e760123640674f3ab70">con</a> = Net.SSH.Connection(host=<span class="stringliteral">&quot;192.168.205.30&quot;</span>)</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a55dab99ca7ab0d23b018de21f96a6e52">   41</a></span>&#160;        self.<a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a55dab99ca7ab0d23b018de21f96a6e52">folder</a> = SSH.FolderPath(self.<a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a516ae64fea679e760123640674f3ab70">con</a>, <span class="stringliteral">&quot;/tmp/pyTest&quot;</span>)</div>
@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('_unit_tests_8py_source.html','');});
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a796eacdbd8b6796555e4bcf026a8794b">   44</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_unit_tests_1_1_test_s_s_h.html#a796eacdbd8b6796555e4bcf026a8794b">tearDown</a>(self):</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        self.folder.remove(isRecursive=<span class="keyword">True</span>)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html">TestLocal</a>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html">TestLocal</a>(<a class="code" href="classobject.html">object</a>):</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html#a2f5c3cb2fba6fc279fa32aa644958a9d">   48</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html#a2f5c3cb2fba6fc279fa32aa644958a9d">setUp</a>(self):</div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html#ae4020891fe8f74ff4a5ce53ccc02f33c">   49</a></span>&#160;        self.<a class="code" href="class_disk_1_1_unit_tests_1_1_test_local.html#ae4020891fe8f74ff4a5ce53ccc02f33c">folder</a> = Local.FolderPath(<span class="stringliteral">&quot;/tmp/pyTest&quot;</span>)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">assert</span> <span class="keywordflow">not</span> self.folder.exists()</div>
@@ -218,7 +218,7 @@ $(document).ready(function(){initNavTree('_unit_tests_8py_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47fc0d7b6ba4b1677fa8a84de58435ea.html">Disk</a></li><li class="navelem"><a class="el" href="_unit_tests_8py.html">UnitTests.py</a></li>
-    <li class="footer">Generated on Tue Feb 12 2013 13:55:15 for py.Disk by
+    <li class="footer">Generated on Thu Mar 28 2013 14:28:17 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
