@@ -30,7 +30,8 @@ class WalkerAbstract:
 		@topDown		bool:	If True, returns results scanning rootFolder from top to bottom.
 		"""
 		walkerClass = cls.allWalkers[rootFolder.__class__]
-		assert rootFolder.exists()
+		if not rootFolder.exists():
+			raise Exception("Folder to walk does not exist: '" + str(rootFolder) + "'")
 		rootFolder = rootFolder.abspath()
 		results = []
 		
