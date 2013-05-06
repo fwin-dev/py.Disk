@@ -386,6 +386,7 @@ class FilePath(PathAbstract):
 			destFilePath = destFilePath.joinFile(str(self.basename()))
 		destFileObj = self._preCopy_getFileObj(destFilePath, shouldCopyDates)
 		self._storeData(destFileObj, shouldCopyDates, destFilePath)
+		assert self.getsize() == destFilePath.getsize()
 	
 	def _preCopy_getFileObj(self, destFilePath, shouldCopyDates):
 		destFilePath.create()
