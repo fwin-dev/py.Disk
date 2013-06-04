@@ -6,7 +6,7 @@ if sys.version_info[0] >= 3 or sys.version_info <= (2,5):
 
 setup(
 	name = "py.Disk",
-	version = "0.5.2.dev02",
+	version = "0.5.3",
 	description = "Object oriented API for working with files and folders",
 	author = "Jesse Cowles",
 	author_email = "jcowles@indigital.net",
@@ -18,7 +18,6 @@ setup(
 	install_requires = [
 		"py.Lang",
 		"py.OS",
-		"py.Net.SSH"
 	],
 	classifiers = [
 		# http://pypi.python.org/pypi?%3Aaction=list_classifiers
