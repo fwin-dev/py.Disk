@@ -399,6 +399,15 @@ class FilePath(PathAbstract):
 		newFilePath = self.dirname().joinFile(destFileName)
 		self.move(newFilePath)
 		return newFilePath
+	
+	def isBinary(self):
+		"""
+		http://stackoverflow.com/questions/898669/how-can-i-detect-if-a-file-is-binary-non-text-in-python
+		"""
+		textchars = "".join(map(chr, [7,8,9,10,12,13,27] + range(0x20, 0x100)))
+		with self.asFile("rb") as file_:
+			isBinary = bool(file_.read(1024).translate(None, textchars))
+		return isBinary
 
 
 class FolderPath(PathAbstract):

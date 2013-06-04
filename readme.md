@@ -40,6 +40,7 @@ In addition, some additional functions (many from `shutil`) are also available:
   - `rename(newFilename)`
   - `copy(destinationFilePath, shouldCopyDates)`
   - `create()` - Similar to `touch`
+  - `isBinary()`
 - For `FolderPath` objects:
   - `copy(destinationFilePath)`
   - `remove(isRecursive)`
