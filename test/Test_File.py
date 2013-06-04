@@ -1,6 +1,6 @@
 from Test_Abstract import Test_File_Abstract
 
-import Disk
+import Disk.Local, Disk.SSH
 from Net import SSH
 
 import unittest
