@@ -1,6 +1,0 @@
-<map id="Disk._base.File" name="Disk._base.File">
-<area shape="rect" id="node3" href="$class_disk_1_1_local_1_1___file_1_1_base_file.html" title="Abstract concept of a file object." alt="" coords="5,403,165,583"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html" title="Represents a file on a remote machine." alt="" coords="190,411,316,576"/>
-<area shape="rect" id="node2" href="$classobject.html" title="{object\n||}" alt="" coords="141,5,197,83"/>
-<area shape="rect" id="node4" href="$class_disk_1_1_local_1_1___file_1_1_file.html" title="Implementation of BaseFile using a FilePath instance to store the path." alt="" coords="21,632,149,709"/>
-</map>

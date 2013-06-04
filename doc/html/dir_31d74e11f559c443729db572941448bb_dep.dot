@@ -1,0 +1,10 @@
+digraph "/Users/jcowles/Desktop/workspace/py.Disk/src/Disk/SSH" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_47fc0d7b6ba4b1677fa8a84de58435ea {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Disk" fontname="Helvetica", fontsize="10", URL="dir_47fc0d7b6ba4b1677fa8a84de58435ea.html"]
+  dir_31d74e11f559c443729db572941448bb [shape=box, label="SSH", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_31d74e11f559c443729db572941448bb.html"];
+  }
+}

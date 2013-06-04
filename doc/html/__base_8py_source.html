@@ -490,69 +490,80 @@ $(document).ready(function(){initNavTree('__base_8py_source.html','');});
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            destFilePath = destFilePath.joinFile(str(self.basename()))</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        destFileObj = self.<a class="code" href="class_disk_1_1__base_1_1_file_path.html#abb49e5731ed1356e77236c00a49c2e3a">_preCopy_getFileObj</a>(destFilePath, shouldCopyDates)</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_file_path.html#ab1a670ae97df6f4053dcbb82d4ced7d1">_storeData</a>(destFileObj, shouldCopyDates, destFilePath)</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keyword">def </span>_preCopy_getFileObj(self, destFilePath, shouldCopyDates):</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        destFilePath.create()</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">return</span> destFilePath.asFile(<span class="stringliteral">&quot;w+b&quot;</span>)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    </div>
-<div class="line"><a name="l00394"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f">  394</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f">move</a>(self, destFilePath):</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_file_path.html#a0a96c74909955f79e65ae294895a170c">copy</a>(destFilePath, <span class="keyword">True</span>)</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        self.remove()</div>
-<div class="line"><a name="l00397"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_file_path.html#a7c07ffcead384a72811163340e7abe09">  397</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_file_path.html#a7c07ffcead384a72811163340e7abe09">rename</a>(self, destFileName):</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        newFilePath = self.dirname().<a class="code" href="namespace_disk.html#ad26861325f9aed2a18a55ec91b290472" title="Joins path components to make a file.">joinFile</a>(destFileName)</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f">move</a>(newFilePath)</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">return</span> newFilePath</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">##</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment"># Abstract concept of a folder path.</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html">  405</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html" title="Abstract concept of a folder path.">FolderPath</a>(<a class="code" href="class_disk_1_1__base_1_1_path_abstract.html">PathAbstract</a>):</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="comment">##</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="comment"># </span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">#       @param walkerClass  WalkerAbstract: @see WalkerAbstract</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="comment">#       </span></div>
-<div class="line"><a name="l00410"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a3ee03c83b40d1634da4da9434769fe6a">  410</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a3ee03c83b40d1634da4da9434769fe6a">__init__</a>(self, path, walkerClass):</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        PathAbstract.__init__(self, path)</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a36b8d8dbba11f7bc0960bf1f17ca4205">_walkerClass</a> = walkerClass</div>
-<div class="line"><a name="l00413"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a6625c9238dfe7d86d34625e4e7730922">  413</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a6625c9238dfe7d86d34625e4e7730922">copy</a>(self, destFolderPath, shouldCopyDates=False):</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        destFolderPath.create()</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">for</span> srcSubfolderPath <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">walk</a>(isRecursive=<span class="keyword">False</span>, wantFiles=<span class="keyword">False</span>, wantFolders=<span class="keyword">True</span>):</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            srcSubfolderPath.copy(destFolderPath.joinFolder(str(srcSubfolderPath.basename())))</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">for</span> srcFilePath <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">walk</a>(isRecursive=<span class="keyword">False</span>, wantFiles=<span class="keyword">True</span>, wantFolders=<span class="keyword">False</span>):</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            srcFilePath.copy(destFolderPath, shouldCopyDates)</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="comment">##</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="comment"># Create directory if not exists</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a64dc1a80534c1a382568faca5474aa25">  421</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a64dc1a80534c1a382568faca5474aa25" title="Create directory if not exists.">create</a>(self):</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.exists():</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordflow">return</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#ae2e8008ca903fe80b5ff50786fda7789">mkdirs</a>()</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    @abstractmethod</div>
-<div class="line"><a name="l00425"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816">  425</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816">rmtree</a>(self):</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">pass</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="comment">##</span></div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="comment"># Remove folder and contents if it exists.</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#aeda5e21bb79e9c7d6240ec96f2cc7aee">  429</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#aeda5e21bb79e9c7d6240ec96f2cc7aee" title="Remove folder and contents if it exists.">remove</a>(self, isRecursive=False):</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">if</span> self.exists():</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> isRecursive:</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                <span class="keywordflow">return</span> self.rmdir()</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                <span class="keywordflow">return</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816">rmtree</a>()</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="comment">##</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="comment"># @see makedirs()</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#ae2e8008ca903fe80b5ff50786fda7789">  437</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#ae2e8008ca903fe80b5ff50786fda7789">mkdirs</a>(self, *args, **kwargs):</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">return</span> self.makedirs(*args, **kwargs)</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="comment">##</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="comment"># @see WalkerAbstract.walk</span></div>
-<div class="line"><a name="l00441"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">  441</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">walk</a>(self, isRecursive, wantFiles, wantFolders, followSymlinks=True, nameGlob=&quot;*&quot;, topDown=True):</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">return</span> self._walkerClass.walk(self, isRecursive, wantFiles, wantFolders, followSymlinks, nameGlob, topDown)</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">assert</span> self.getsize() == destFilePath.getsize()</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keyword">def </span>_preCopy_getFileObj(self, destFilePath, shouldCopyDates):</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        destFilePath.create()</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> destFilePath.asFile(<span class="stringliteral">&quot;w+b&quot;</span>)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    </div>
+<div class="line"><a name="l00395"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f">  395</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f">move</a>(self, destFilePath):</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_file_path.html#a0a96c74909955f79e65ae294895a170c">copy</a>(destFilePath, <span class="keyword">True</span>)</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        self.remove()</div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_file_path.html#a7c07ffcead384a72811163340e7abe09">  398</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_file_path.html#a7c07ffcead384a72811163340e7abe09">rename</a>(self, destFileName):</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        newFilePath = self.dirname().<a class="code" href="namespace_disk.html#ad26861325f9aed2a18a55ec91b290472" title="Joins path components to make a file.">joinFile</a>(destFileName)</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f">move</a>(newFilePath)</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">return</span> newFilePath</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="comment"># </span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="comment">#       http://stackoverflow.com/questions/898669/how-can-i-detect-if-a-file-is-binary-non-text-in-python</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="comment">#       </span></div>
+<div class="line"><a name="l00407"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_file_path.html#afe33fad184bf576b73ec8ac07149965f">  407</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_file_path.html#afe33fad184bf576b73ec8ac07149965f" title="http://stackoverflow.com/questions/898669/how-can-i-detect-if-a-file-is-binary-non-text-in-python">isBinary</a>(self):</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        textchars = <span class="stringliteral">&quot;&quot;</span>.join(map(chr, [7,8,9,10,12,13,27] + range(0x20, 0x100)))</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        with self.<a class="code" href="class_disk_1_1__base_1_1_file_path.html#a0b611f27ae594341ab2569694b5a0491">asFile</a>(<span class="stringliteral">&quot;rb&quot;</span>) <span class="keyword">as</span> file_:</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            isBinary = bool(file_.read(1024).translate(<span class="keywordtype">None</span>, textchars))</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">return</span> isBinary</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="comment">##</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="comment"># Abstract concept of a folder path.</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html">  416</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html" title="Abstract concept of a folder path.">FolderPath</a>(<a class="code" href="class_disk_1_1__base_1_1_path_abstract.html">PathAbstract</a>):</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="comment"># </span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="comment">#       @param walkerClass  WalkerAbstract: @see WalkerAbstract</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="comment">#       </span></div>
+<div class="line"><a name="l00421"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a3ee03c83b40d1634da4da9434769fe6a">  421</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a3ee03c83b40d1634da4da9434769fe6a">__init__</a>(self, path, walkerClass):</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        PathAbstract.__init__(self, path)</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a36b8d8dbba11f7bc0960bf1f17ca4205">_walkerClass</a> = walkerClass</div>
+<div class="line"><a name="l00424"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a6625c9238dfe7d86d34625e4e7730922">  424</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a6625c9238dfe7d86d34625e4e7730922">copy</a>(self, destFolderPath, shouldCopyDates=False):</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        destFolderPath.create()</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">for</span> srcSubfolderPath <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">walk</a>(isRecursive=<span class="keyword">False</span>, wantFiles=<span class="keyword">False</span>, wantFolders=<span class="keyword">True</span>):</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            srcSubfolderPath.copy(destFolderPath.joinFolder(str(srcSubfolderPath.basename())))</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">for</span> srcFilePath <span class="keywordflow">in</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">walk</a>(isRecursive=<span class="keyword">False</span>, wantFiles=<span class="keyword">True</span>, wantFolders=<span class="keyword">False</span>):</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            srcFilePath.copy(destFolderPath, shouldCopyDates)</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment"># Create directory if not exists</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a64dc1a80534c1a382568faca5474aa25">  432</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a64dc1a80534c1a382568faca5474aa25" title="Create directory if not exists.">create</a>(self):</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.exists():</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <span class="keywordflow">return</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#ae2e8008ca903fe80b5ff50786fda7789">mkdirs</a>()</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    @abstractmethod</div>
+<div class="line"><a name="l00436"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816">  436</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816">rmtree</a>(self):</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="comment"># Remove folder and contents if it exists.</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#aeda5e21bb79e9c7d6240ec96f2cc7aee">  440</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#aeda5e21bb79e9c7d6240ec96f2cc7aee" title="Remove folder and contents if it exists.">remove</a>(self, isRecursive=False):</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">if</span> self.exists():</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> isRecursive:</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                <span class="keywordflow">return</span> self.rmdir()</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                <span class="keywordflow">return</span> self.<a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a7ea5de715f42afd14092c2bbc40ea816">rmtree</a>()</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="comment"># @see makedirs()</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#ae2e8008ca903fe80b5ff50786fda7789">  448</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#ae2e8008ca903fe80b5ff50786fda7789">mkdirs</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">return</span> self.makedirs(*args, **kwargs)</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">##</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="comment"># @see WalkerAbstract.walk</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno"><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">  452</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1__base_1_1_folder_path.html#a8f566c7282b023974ccf63d4d9a174ab">walk</a>(self, isRecursive, wantFiles, wantFolders, followSymlinks=True, nameGlob=&quot;*&quot;, topDown=True):</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="keywordflow">return</span> self._walkerClass.walk(self, isRecursive, wantFiles, wantFolders, followSymlinks, nameGlob, topDown)</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47fc0d7b6ba4b1677fa8a84de58435ea.html">Disk</a></li><li class="navelem"><a class="el" href="__base_8py.html">_base.py</a></li>
-    <li class="footer">Generated on Thu Mar 28 2013 14:28:16 for py.Disk by
+    <li class="footer">Generated on Tue Jun 4 2013 09:25:42 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

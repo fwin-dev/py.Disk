@@ -5,6 +5,7 @@ var class_disk_1_1__base_1_1_file_path =
     [ "copy", "class_disk_1_1__base_1_1_file_path.html#a0a96c74909955f79e65ae294895a170c", null ],
     [ "copyDates", "class_disk_1_1__base_1_1_file_path.html#a9d5191a0ede1c2acc0d1584d542ab543", null ],
     [ "create", "class_disk_1_1__base_1_1_file_path.html#a45d2078992fc3f8c8e8078afab51106b", null ],
+    [ "isBinary", "class_disk_1_1__base_1_1_file_path.html#afe33fad184bf576b73ec8ac07149965f", null ],
     [ "move", "class_disk_1_1__base_1_1_file_path.html#af3b45a7e70358b41d8ad619dca94f18f", null ],
     [ "rename", "class_disk_1_1__base_1_1_file_path.html#a7c07ffcead384a72811163340e7abe09", null ]
 ];

@@ -1,6 +1,0 @@
-<map id="Disk._base.FolderPath" name="Disk._base.FolderPath">
-<area shape="rect" id="node4" href="$class_disk_1_1_local_1_1___paths_1_1_folder_path.html" title="A locally accessible folder path." alt="" coords="5,587,192,679"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_s_s_h_1_1___paths_1_1_folder_path.html" title="Path of a folder on a remote machine." alt="" coords="216,587,400,679"/>
-<area shape="rect" id="node2" href="$class_disk_1_1__base_1_1_path_abstract.html" title="{Disk._base.PathAbstract\n|+ path\l|+ __init__()\l+ asStr()\l+ __str__()\l+ __repr__()\l+ __add__()\l+ __radd__()\l+ __eq__()\l+ __hash__()\l+ __getattr__()\l}" alt="" coords="121,131,284,325"/>
-<area shape="rect" id="node3" href="$classobject.html" title="{object\n||}" alt="" coords="175,5,231,83"/>
-</map>

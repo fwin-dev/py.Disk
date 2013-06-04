@@ -1,6 +1,0 @@
-<map id="Disk.SSH._Paths.FilePath" name="Disk.SSH._Paths.FilePath">
-<area shape="rect" id="node2" href="$class_disk_1_1_s_s_h_1_1___paths_1_1_s_s_hpath_abstract.html" title="{Disk.SSH._Paths.SSHpathAbstract\n|+ connection\l|+ __init__()\l}" alt="" coords="5,417,229,495"/>
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file_path.html" title="{Disk._base.FilePath\n||+ __init__()\l+ asFile()\l+ create()\l+ copyDates()\l+ copy()\l+ move()\l+ rename()\l}" alt="" coords="254,373,388,539"/>
-<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_path_abstract.html" title="{Disk._base.PathAbstract\n|+ path\l|+ __init__()\l+ asStr()\l+ __str__()\l+ __repr__()\l+ __add__()\l+ __radd__()\l+ __eq__()\l+ __hash__()\l+ __getattr__()\l}" alt="" coords="239,131,403,325"/>
-<area shape="rect" id="node5" href="$classobject.html" title="{object\n||}" alt="" coords="293,5,349,83"/>
-</map>

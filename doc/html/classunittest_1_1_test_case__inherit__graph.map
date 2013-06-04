@@ -1,7 +1,0 @@
-<map id="TestCase" name="TestCase">
-<area shape="rect" id="node2" href="$class_disk_1_1_unit_tests_1_1_local_walker.html" title="{Disk.UnitTests.LocalWalker\n||}" alt="" coords="5,145,179,223"/>
-<area shape="rect" id="node3" href="$class_disk_1_1_unit_tests_1_1_perm_bits.html" title="{Disk.UnitTests.PermBits\n||+ setUp()\l+ tearDown()\l+ getTestFolder()\l}" alt="" coords="204,131,359,237"/>
-<area shape="rect" id="node4" href="$class_disk_1_1_unit_tests_1_1_s_s_hfile.html" title="{Disk.UnitTests.SSHfile\n||+ test_emptyFile()\l+ test_writeNonExistFile()\l}" alt="" coords="383,138,547,230"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_unit_tests_1_1_s_s_hwalker.html" title="{Disk.UnitTests.SSHwalker\n||}" alt="" coords="571,145,740,223"/>
-<area shape="rect" id="node6" href="$class_disk_1_1_unit_tests_1_1_test_o_sfuncs.html" title="{Disk.UnitTests.TestOSfuncs\n||+ test_utime()\l}" alt="" coords="765,145,944,223"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="Disk.SSH._File.File.close" name="Disk.SSH._File.File.close">
-<area shape="rect" id="node2" href="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a2b8fa9d0d909bb45c91d589d2e0cf6d3" title="Uploads the file if changed." alt="" coords="213,31,368,57"/>
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file.html#af4a79b03f7f30ffdf6be32aaa025f9aa" title="Disk._base.File.isWritable" alt="" coords="417,5,583,32"/>
-<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_file.html#a7401ddb8e1f5573402123b8f65b7bc08" title="Disk._base.File.getPath" alt="" coords="423,56,577,83"/>
-<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_file.html#a5801d2db863fa1967d7847917aa757f3" title="Disk._base.File.isClosed" alt="" coords="633,5,793,32"/>
-<area shape="rect" id="node6" href="$class_disk_1_1__base_1_1_file.html#a036d4621c4196403b6a126c9ee1cc0c3" title="Disk._base.File._getPath" alt="" coords="632,56,795,83"/>
-</map>

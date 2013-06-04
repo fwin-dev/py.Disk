@@ -1,6 +1,0 @@
-<map id="Disk.UnitTests.LocalWalker" name="Disk.UnitTests.LocalWalker">
-<area shape="rect" id="node2" href="$class_disk_1_1_unit_tests_1_1_test_local.html" title="{Disk.UnitTests.TestLocal\n|+ folder\l|+ setUp()\l+ tearDown()\l}" alt="" coords="5,131,163,223"/>
-<area shape="rect" id="node3" href="$classobject.html" title="{object\n||}" alt="" coords="56,5,112,83"/>
-<area shape="rect" id="node4" href="$classunittest_1_1_test_case.html" title="{TestCase\n||}" alt="" coords="187,139,265,216"/>
-<area shape="rect" id="node5" href="$class_disk_1_1_unit_tests_1_1_walker.html" title="{Disk.UnitTests.Walker\n||+ test_walk_folder_noRecurse()\l+ test_walk_folder_recurse()\l}" alt="" coords="291,131,491,223"/>
-</map>

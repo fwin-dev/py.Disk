@@ -1,5 +1,0 @@
-<map id="Disk._base.PathFuncsAbstract" name="Disk._base.PathFuncsAbstract">
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_o_s_funcs.html" title="{Disk._base.OSFuncs\n|+ SINGLE_PATH_ARG\l+ MULTI_PATH_ARG\l+ SPECIAL_PATH_ARG\l+ ALL_FUNCS\l+ LOCAL\l+ REMOTE\l+ REMOTE_UNSUPPORTED\l+ INPUTARGS_FILE\l+ INPUTARGS_FOLDER\l+ INPUTARGS_FILE_FOLDER\l+ RETURN_FILE\l+ RETURN_FOLDER\l+ RETURN_SAME_AS_INPUT_TYPE\l+ RETURN_SPECIAL\l+ RETURN_OTHER\l|+ __init__()\l+ getBuiltinFunction()\l}" alt="" coords="5,273,248,570"/>
-<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_o_s_path_funcs.html" title="{Disk._base.OSPathFuncs\n|+ SINGLE_PATH_ARG\l+ MULTI_PATH_ARG\l+ SPECIAL_PATH_ARG\l+ ALL_FUNCS\l+ LOCAL\l+ REMOTE\l+ REMOTE_UNSUPPORTED\l+ INPUTARGS_FILE\l+ INPUTARGS_FOLDER\l+ INPUTARGS_FILE_FOLDER\l+ RETURN_FILE\l+ RETURN_FOLDER\l+ RETURN_SAME_AS_INPUT_TYPE\l+ RETURN_SPECIAL\l+ RETURN_OTHER\l|+ __init__()\l+ getBuiltinFunction()\l}" alt="" coords="272,273,515,570"/>
-<area shape="rect" id="node2" href="$class_abstraction_1_1_descriptor.html" title="{Abstraction::Descriptor\n||}" alt="" coords="187,5,333,83"/>
-</map>

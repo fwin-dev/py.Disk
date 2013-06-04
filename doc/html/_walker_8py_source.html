@@ -136,35 +136,36 @@ $(document).ready(function(){initNavTree('_walker_8py_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">#       </span></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="class_disk_1_1_walker_1_1_walker_abstract.html#ab2d1c1c72047d416ca413f3a9ce25aea">   33</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_disk_1_1_walker_1_1_walker_abstract.html#ab2d1c1c72047d416ca413f3a9ce25aea" title="Gets a list of files and/or folders in a folder.">walk</a>(cls, rootFolder, isRecursive, wantFiles, wantFolders, followSymlinks=False, nameGlob=&quot;*&quot;, topDown=True):</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        walkerClass = cls.allWalkers[rootFolder.__class__]</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">assert</span> rootFolder.exists()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        rootFolder = rootFolder.abspath()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        results = []</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> hasattr(nameGlob, <span class="stringliteral">&quot;__iter__&quot;</span>):</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            nameGlob = [nameGlob]</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> currentRoot, currentFolders, currentFiles <span class="keywordflow">in</span> walkerClass._getOSwalkResults(rootFolder, topDown, followSymlinks):</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> isRecursive <span class="keywordflow">and</span> currentRoot != str(rootFolder):</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">break</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> wantFolders:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">for</span> currentFolder <span class="keywordflow">in</span> currentFolders:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keywordflow">if</span> wantFiles <span class="keywordflow">or</span> any([fnmatchcase(currentFolder, singleNameGlob) <span class="keywordflow">for</span> singleNameGlob <span class="keywordflow">in</span> nameGlob]):</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        results.append(rootFolder._makeFolderPath(os.path.join(currentRoot, currentFolder)))</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> wantFiles:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">for</span> currentFile <span class="keywordflow">in</span> currentFiles:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <span class="keywordflow">if</span> any([fnmatchcase(currentFile, singleNameGlob) <span class="keywordflow">for</span> singleNameGlob <span class="keywordflow">in</span> nameGlob]):</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        results.append(rootFolder._makeFilePath(os.path.join(currentRoot, currentFile)))</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> results</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_walker.html#ad8f89f394f0ec8935199bce692b94f04">   55</a></span>&#160;walk = WalkerAbstract.walk</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> rootFolder.exists():</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">raise</span> <a class="code" href="class_exception.html">Exception</a>(<span class="stringliteral">&quot;Folder to walk does not exist: &#39;&quot;</span> + str(rootFolder) + <span class="stringliteral">&quot;&#39;&quot;</span>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        rootFolder = rootFolder.abspath()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        results = []</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> hasattr(nameGlob, <span class="stringliteral">&quot;__iter__&quot;</span>):</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            nameGlob = [nameGlob]</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> currentRoot, currentFolders, currentFiles <span class="keywordflow">in</span> walkerClass._getOSwalkResults(rootFolder, topDown, followSymlinks):</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> isRecursive <span class="keywordflow">and</span> currentRoot != str(rootFolder):</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> wantFolders:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">for</span> currentFolder <span class="keywordflow">in</span> currentFolders:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    <span class="keywordflow">if</span> wantFiles <span class="keywordflow">or</span> any([fnmatchcase(currentFolder, singleNameGlob) <span class="keywordflow">for</span> singleNameGlob <span class="keywordflow">in</span> nameGlob]):</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        results.append(rootFolder._makeFolderPath(os.path.join(currentRoot, currentFolder)))</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> wantFiles:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">for</span> currentFile <span class="keywordflow">in</span> currentFiles:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <span class="keywordflow">if</span> any([fnmatchcase(currentFile, singleNameGlob) <span class="keywordflow">for</span> singleNameGlob <span class="keywordflow">in</span> nameGlob]):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        results.append(rootFolder._makeFilePath(os.path.join(currentRoot, currentFile)))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> results</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="namespace_disk_1_1_walker.html#ad8f89f394f0ec8935199bce692b94f04">   56</a></span>&#160;walk = WalkerAbstract.walk</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47fc0d7b6ba4b1677fa8a84de58435ea.html">Disk</a></li><li class="navelem"><a class="el" href="_walker_8py.html">Walker.py</a></li>
-    <li class="footer">Generated on Thu Mar 28 2013 14:28:17 for py.Disk by
+    <li class="footer">Generated on Tue Jun 4 2013 09:25:42 for py.Disk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

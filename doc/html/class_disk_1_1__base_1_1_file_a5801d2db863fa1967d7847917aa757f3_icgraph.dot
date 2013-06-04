@@ -1,0 +1,32 @@
+digraph "Disk._base.File.isClosed"
+{
+ // INTERACTIVE_SVG=YES
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Disk._base.File.isClosed",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Disk._base.File.__repr__",height=0.2,width=0.4,color="black",URL="$class_disk_1_1__base_1_1_file.html#aa6035675eda3f591d6a7404e07453816"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Disk._base.File.__str__",height=0.2,width=0.4,color="black",URL="$class_disk_1_1__base_1_1_file.html#afecee354ca982223e41d25bf0910d8f2"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Disk._base.File.__enter__",height=0.2,width=0.4,color="black",URL="$class_disk_1_1__base_1_1_file.html#a91270d2ecba3b573d24b79e7a25c6b58"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Disk._base.File.isWritable",height=0.2,width=0.4,color="black",URL="$class_disk_1_1__base_1_1_file.html#af4a79b03f7f30ffdf6be32aaa025f9aa"];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Disk.SSH._File.File.\l__repr__",height=0.2,width=0.4,color="black",URL="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#aa2cb1ac59649f601a1c209b425923f38"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Disk.SSH._File.File.flush",height=0.2,width=0.4,color="black",URL="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a2b8fa9d0d909bb45c91d589d2e0cf6d3",tooltip="Uploads the file if changed."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Disk.SSH._File.File.close",height=0.2,width=0.4,color="black",URL="$class_disk_1_1_s_s_h_1_1___file_1_1_file.html#a78a57bc0b49bb00fe9672e04fba5661c"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Disk._base.File.__exit__",height=0.2,width=0.4,color="black",URL="$class_disk_1_1__base_1_1_file.html#ad9e735b15b84fb029c777c9f48e30295"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Disk._base.File.destruct",height=0.2,width=0.4,color="black",URL="$class_disk_1_1__base_1_1_file.html#ababdfcceed76d07a67803fb4b7272e4d"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Disk._base.File.reopen",height=0.2,width=0.4,color="black",URL="$class_disk_1_1__base_1_1_file.html#addb4e95daa21c36c5bf6d30e7ea29e0e"];
+  Node11 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
