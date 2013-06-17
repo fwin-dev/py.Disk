@@ -207,23 +207,9 @@ class PathAbstract(object):
 		return self.path + (": " + message if message != None else "")
 	
 	def __add__(self, right):
-		return self._addMaker(self.path + self._addMaker_getPath(right))
+		return self.join(right)
 	def __radd__(self, left):
-		return self._addMaker(self._addMaker_getPath(left) + self.path)
-	
-	def _addMaker_getPath(self, path):
-		if isinstance(path, str) or isinstance(path, unicode):
-			return path
-		elif isinstance(path, PathAbstract):
-			return path.path
-		else:
-			raise Exception("Cannot concatenate " + repr(path) + " to " + self)
-	
-	def _addMaker(self, newPath):
-		if isinstance(self, FilePath):
-			return self._makeFilePath(newPath)
-		elif isinstance(self, FolderPath):
-			return self._makeFolderPath(newPath)
+		return left.join(self)
 	
 	def __eq__(self, other):
 		if not self.__class__ == other.__class__:
@@ -248,10 +234,12 @@ class PathAbstract(object):
 		return self._buildFunc(name, argParser)
 	
 	@classmethod
-	def _getClassTypes(cls):
-		if issubclass(cls, FilePath):
+	def _getClassTypes(cls, classType=None):
+		if classType == None:
+			classType = cls
+		if issubclass(classType, FilePath):
 			index = cls._allFilePathTypes.index(cls)
-		elif issubclass(cls, FolderPath):
+		elif issubclass(classType, FolderPath):
 			index = cls._allFolderPathTypes.index(cls)
 		fileObjectClass = cls._allFileObjectTypes[index]
 		filePathClass = cls._allFilePathTypes[index]
