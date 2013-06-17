@@ -313,13 +313,7 @@ class PathAbstract(object):
 				return self._makeFilePath(rawReturnValue)
 			elif isinstance(inputArgs[-1], str) or isinstance(inputArgs[-1], unicode):
 				if funcName == "join":
-					pathObj = self._makeFolderPath(rawReturnValue)
-					if pathObj.isdir():
-						return pathObj
-					pathObj = self._makeFilePath(rawReturnValue)
-					if pathObj.isfile():
-						return pathObj
-					raise Exception("Could not determine output type of join call. Specifically use FilePath or FolderPath as last argument in join call instead, or use the joinFile or joinFolder methods.")
+					raise Exception("Could not determine output type of join call. Specifically use a FilePath or FolderPath instance as the last argument in the join call instead, or use the joinFile or joinFolder methods.")
 				elif funcName == "joinFile":
 					return self._makeFilePath(rawReturnValue)
 				elif funcName == "joinFolder":
