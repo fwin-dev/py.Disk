@@ -121,7 +121,7 @@ class File(object):
 	def __repr__(self, valueLabel=None, value=None, extraPairDict=None, message=None):
 		if valueLabel == None:
 			valuePairs = OrderedDict()
-			valuePairs["getPath"] = "'" + self.getPath() + "'"
+			valuePairs["getPath"] = "'" + str(self.getPath()) + "'"
 			valuePairs["mode"] = self.mode
 			valuePairs["isWritable"] = self.isWritable()
 			valuePairs["isClosed"] = self.isClosed()
