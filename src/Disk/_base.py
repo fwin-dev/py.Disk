@@ -305,28 +305,42 @@ class PathAbstract(object):
 	
 	def _argsConvert_output_special(self, funcName, argParser, rawReturnValue, inputArgs):
 		if funcName in ("join", "joinFile", "joinFolder"):
-			if isinstance(inputArgs[-1], FolderPath):
-				assert funcName in ("join", "joinFolder")
-				return self._makeFolderPath(rawReturnValue)
-			elif isinstance(inputArgs[-1], FilePath):
-				assert funcName in ("join", "joinFile")
-				return self._makeFilePath(rawReturnValue)
-			elif isinstance(inputArgs[-1], str) or isinstance(inputArgs[-1], unicode):
-				if funcName == "join":
-					raise Exception("Could not determine output type of join call. Specifically use a FilePath or FolderPath instance as the last argument in the join call instead, or use the joinFile or joinFolder methods.")
-				elif funcName == "joinFile":
-					return self._makeFilePath(rawReturnValue)
-				elif funcName == "joinFolder":
-					return self._makeFolderPath(rawReturnValue)
-			else:
-				raise Exception("Type not supported")
+			return self._argsConvert_output_special_join(funcName, inputArgs, rawReturnValue)
 		elif funcName == "splitext":
 			fileObjectClass, filePathClass, folderPathClass = self._getClassTypes()
 			assert isinstance(inputArgs[0], filePathClass)
 			return (self._makeFilePath(rawReturnValue[0]), rawReturnValue[1])
 		else:
 			raise NotImplementedError("Function not yet implemented")
-
+	
+	def _argsConvert_output_special_join(self, funcName, inputArgs, rawReturnValue):
+		if isinstance(inputArgs[-1], FolderPath):
+			assert funcName in ("join", "joinFolder")
+			self._argsConvert_output_special_join_validation(inputArgs, "FolderPath")
+			return self._makeFolderPath(rawReturnValue)
+		elif isinstance(inputArgs[-1], FilePath):
+			assert funcName in ("join", "joinFile")
+			self._argsConvert_output_special_join_validation(inputArgs, "FilePath")
+			for arg in inputArgs[0:-1]:
+				if isinstance(arg, FilePath):
+					raise Exception("Tried to join a FilePath on the left with a FilePath on the right")
+			return self._makeFilePath(rawReturnValue)
+		elif isinstance(inputArgs[-1], str) or isinstance(inputArgs[-1], unicode):
+			if funcName == "join":
+				raise Exception("Could not determine output type of join call. Specifically use a FilePath or FolderPath instance as the last argument in the join call instead, or use the joinFile or joinFolder methods.")
+			elif funcName == "joinFile":
+				self._argsConvert_output_special_join_validation(inputArgs, "FilePath")
+				return self._makeFilePath(rawReturnValue)
+			elif funcName == "joinFolder":
+				self._argsConvert_output_special_join_validation(inputArgs, "FolderPath")
+				return self._makeFolderPath(rawReturnValue)
+		else:
+			raise Exception("Type not supported")
+	
+	def _argsConvert_output_special_join_validation(self, inputArgs, rightTypeStr):
+		for arg in inputArgs[0:-1]:
+			if isinstance(arg, FilePath):
+				raise Exception("Tried to join a FilePath on the left with a " + rightTypeStr + " on the right")
 
 class FilePath(PathAbstract):
 	def __init__(self, path):
