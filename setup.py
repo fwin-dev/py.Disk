@@ -1,12 +1,20 @@
 from setuptools import setup, find_packages
+from setuptools.command.install import install as _install
 
 import sys
-if sys.version_info[0] >= 3 or sys.version_info <= (2,5):
-	raise Exception("This module only supports Python 2.6 or 2.7")
+
+class InstallHook(_install):
+	def run(self):
+		self.preInstall()
+		_install.run(self)
+	def preInstall(self):
+		if sys.version_info[0] >= 3 or sys.version_info <= (2,5):
+			raise Exception("This module only supports Python 2.6 or 2.7")
 
 setup(
+	cmdclass = {"install": InstallHook},
 	name = "py.Disk",
-	version = "1.0.0",
+	version = "1.0.1",
 	description = "Object oriented API for working with files and folders",
 	author = "Jesse Cowles",
 	author_email = "jcowles@indigital.net",
