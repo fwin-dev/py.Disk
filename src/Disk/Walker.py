@@ -38,9 +38,16 @@ class WalkerAbstract:
 		if not hasattr(nameGlob, "__iter__"):
 			nameGlob = [nameGlob]
 		
+		foundRoot = False
 		for currentRoot, currentFolders, currentFiles in walkerClass._getOSwalkResults(rootFolder, topDown, followSymlinks):
-			if not isRecursive and currentRoot != str(rootFolder):
-				break
+			if not isRecursive:
+				if foundRoot:
+					break
+				if not isRecursive and currentRoot == str(rootFolder):
+					foundRoot = True
+				else:
+					continue
+			
 			if wantFolders:
 				for currentFolder in currentFolders:
 					if wantFiles or any([fnmatchcase(currentFolder, singleNameGlob) for singleNameGlob in nameGlob]):
