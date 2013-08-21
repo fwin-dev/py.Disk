@@ -50,11 +50,11 @@ class WalkerAbstract:
 			
 			if wantFolders:
 				for currentFolder in currentFolders:
-					if wantFiles or any([fnmatchcase(currentFolder, singleNameGlob) for singleNameGlob in nameGlob]):
+					if nameGlob == "*" or any([fnmatchcase(currentFolder, singleNameGlob) for singleNameGlob in nameGlob]):
 						results.append(rootFolder._makeFolderPath(os.path.join(currentRoot, currentFolder)))
 			if wantFiles:
 				for currentFile in currentFiles:
-					if any([fnmatchcase(currentFile, singleNameGlob) for singleNameGlob in nameGlob]):
+					if nameGlob == "*" or any([fnmatchcase(currentFile, singleNameGlob) for singleNameGlob in nameGlob]):
 						results.append(rootFolder._makeFilePath(os.path.join(currentRoot, currentFile)))
 		return results
 
