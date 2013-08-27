@@ -341,6 +341,25 @@ class PathAbstract(object):
 		for arg in inputArgs[0:-1]:
 			if isinstance(arg, FilePath):
 				raise Exception("Tried to join a FilePath on the left with a " + rightTypeStr + " on the right")
+	
+	def splitAll(self):
+		"""Splits a path into a list of components, with each component being either a filename or foldername. The only
+		exception to this is the first component, which may be a drive letter or forward slash, signifying the root folder."""
+		allParts_str = str(self).split(os.sep)
+		if allParts_str[0] == "":
+			allParts_str[0] = os.sep	# defines root folder
+		if allParts_str[-1] == "":
+			del allParts_str[-1]		# extra slash at the end
+		allParts_pathInstance = []
+		for part in allParts_str[:-1]:
+			allParts_pathInstance.append(self._makeFolderPath(part))
+		if isinstance(self, FilePath):
+			allParts_pathInstance.append(self._makeFilePath(allParts_str[-1]))
+		elif isinstance(self, FolderPath):
+			allParts_pathInstance.append(self._makeFolderPath(allParts_str[-1]))
+		else:
+			raise Exception("Type not supported")
+		return allParts_pathInstance
 
 class FilePath(PathAbstract):
 	def __init__(self, path):

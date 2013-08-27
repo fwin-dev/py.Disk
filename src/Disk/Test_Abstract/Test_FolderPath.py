@@ -61,6 +61,17 @@ class FolderPathAbstract:
 		self.assertIsInstance(self.srcFolderPath + self.relFolderPath, Disk._base.FolderPath)
 		self.assertEqual(fullPath_usingJoin, self.srcFolderPath + self.relFolderPath)
 	
+	def test_splitAll(self):
+		paths = ("/foo/bar", "foo/bar", "foo")
+		paths = [self.srcFolderPath._makeFolderPath(path) for path in paths]
+		correctSplits = ([self.srcFolderPath._makeFolderPath("/"), self.srcFolderPath._makeFolderPath("foo"), self.srcFolderPath._makeFolderPath("bar")],
+						 [self.srcFolderPath._makeFolderPath("foo"), self.srcFolderPath._makeFolderPath("bar")],
+						 [self.srcFolderPath._makeFolderPath("foo")]
+						)
+		for path, correctSplit in zip(paths, correctSplits):
+			pathParts = path.splitAll()
+			self.assertEqual(pathParts, correctSplit)
+	
 # 	def test_join_folderWithFullFolder(self):
 # 		# This should be an invalid operation, but there's no good way to check if a path is relative or absolute
 # 		with self.assertRaises(Exception):

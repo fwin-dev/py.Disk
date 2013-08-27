@@ -14,7 +14,7 @@ class InstallHook(_install):
 setup(
 	cmdclass = {"install": InstallHook},
 	name = "py.Disk",
-	version = "1.0.2.dev01",
+	version = "1.0.2.dev02",
 	description = "Object oriented API for working with files and folders",
 	author = "Jesse Cowles",
 	author_email = "jcowles@indigital.net",

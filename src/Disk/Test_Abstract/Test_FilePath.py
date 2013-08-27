@@ -39,6 +39,16 @@ class FilePathAbstract:
 		with self.assertRaises(Exception):
 			print(self.srcFilePath + self.destFilePath)
 	
+	def test_splitAll(self):
+		paths = ("bar.txt", "/foo/bar.txt")
+		paths = [self.srcFilePath._makeFilePath(path) for path in paths]
+		correctSplits = ([self.srcFilePath._makeFilePath("bar.txt")],
+						 [self.srcFilePath._makeFolderPath("/"), self.srcFilePath._makeFolderPath("foo"), self.srcFilePath._makeFilePath("bar.txt")]
+						)
+		for path, correctSplit in zip(paths, correctSplits):
+			pathParts = path.splitAll()
+			self.assertEqual(pathParts, correctSplit)
+	
 	def test_copy_withModifiedDate(self):
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0
 		self.srcFilePath.copy(self.destFilePath, shouldCopyDates=True)
@@ -63,4 +73,3 @@ class FilePathAbstract:
 		self.srcFilePath.move(self.destFilePath)
 		self.assertTrue(not self.srcFilePath.exists(), "Failed to remove source file")
 		self.assertTrue(self.destFilePath.getsize() > 0, "Destination file contents were not entirely moved from the source file")
-
