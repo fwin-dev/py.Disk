@@ -289,19 +289,22 @@ class PathAbstract(object):
 		elif funcName in argParser.RETURN_FOLDER:
 			return self._makeFolderPath(rawReturnValue)
 		elif funcName in argParser.RETURN_SAME_AS_INPUT_TYPE:
-			fileObjectClass, filePathClass, folderPathClass = self._getClassTypes()
-			if isinstance(inputArgs[0], filePathClass):
-				return self._makeFilePath(rawReturnValue)
-			elif isinstance(inputArgs[0], folderPathClass):
-				return self._makeFolderPath(rawReturnValue)
-			else:
-				raise Exception("Return value from os or os.path function can't be converted to a PathAbstract type because input argument type of function could not be determined")
+			return self._argsConvert_output_sameAsInputType(inputArgs[0], rawReturnValue)
 		elif funcName in argParser.RETURN_OTHER:
 			return rawReturnValue
 		elif funcName in argParser.RETURN_SPECIAL:
 			return self._argsConvert_output_special(funcName, argParser, rawReturnValue, inputArgs)
 		else:
 			raise Exception("Unknown return type for function - can't convert to a PathAbstract type")
+	
+	def _argsConvert_output_sameAsInputType(self, inputArg, rawReturnValue):
+		fileObjectClass, filePathClass, folderPathClass = self._getClassTypes()
+		if isinstance(inputArg, filePathClass):
+			return self._makeFilePath(rawReturnValue)
+		elif isinstance(inputArg, folderPathClass):
+			return self._makeFolderPath(rawReturnValue)
+		else:
+			raise Exception("Return value from os or os.path function can't be converted to a PathAbstract type because input argument type of function could not be determined")
 	
 	def _argsConvert_output_special(self, funcName, argParser, rawReturnValue, inputArgs):
 		if funcName in ("join", "joinFile", "joinFolder"):
@@ -310,6 +313,10 @@ class PathAbstract(object):
 			fileObjectClass, filePathClass, folderPathClass = self._getClassTypes()
 			assert isinstance(inputArgs[0], filePathClass)
 			return (self._makeFilePath(rawReturnValue[0]), rawReturnValue[1])
+		elif funcName == "split":
+			dirname = self._makeFolderPath(rawReturnValue[0])
+			basename = self._argsConvert_output_sameAsInputType(inputArgs[0], rawReturnValue[1])
+			return (dirname, basename)
 		else:
 			raise NotImplementedError("Function not yet implemented")
 	
