@@ -32,6 +32,8 @@ class WalkerAbstract:
 		walkerClass = cls.allWalkers[rootFolder.__class__]
 		if not rootFolder.exists():
 			raise Exception("Folder to walk does not exist: '" + str(rootFolder) + "'")
+		if not rootFolder.access(os.R_OK):
+			raise Exception("Permission denied while reading folder: '" + str(rootFolder) + "'")
 		rootFolder = rootFolder.abspath()
 		results = []
 		
@@ -43,7 +45,7 @@ class WalkerAbstract:
 			if not isRecursive:
 				if foundRoot:
 					break
-				if not isRecursive and currentRoot == str(rootFolder):
+				if currentRoot == str(rootFolder):
 					foundRoot = True
 				else:
 					continue
@@ -51,7 +53,10 @@ class WalkerAbstract:
 			if wantFolders:
 				for currentFolder in currentFolders:
 					if nameGlob == "*" or any([fnmatchcase(currentFolder, singleNameGlob) for singleNameGlob in nameGlob]):
-						results.append(rootFolder._makeFolderPath(os.path.join(currentRoot, currentFolder)))
+						currentFolder = rootFolder._makeFolderPath(os.path.join(currentRoot, currentFolder))
+						if isRecursive and not currentFolder.access(os.R_OK):
+							raise Exception("Permission denied while reading folder: '" + str(rootFolder) + "'")
+						results.append(currentFolder)
 			if wantFiles:
 				for currentFile in currentFiles:
 					if nameGlob == "*" or any([fnmatchcase(currentFile, singleNameGlob) for singleNameGlob in nameGlob]):
