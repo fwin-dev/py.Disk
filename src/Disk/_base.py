@@ -192,7 +192,8 @@ class PathAbstract(object):
 	
 	def __init__(self, path):
 		self.path = path
-		assert isinstance(self.path, str) or isinstance(self.path, unicode)
+		if not isinstance(self.path, basestring):
+			raise Exception("Incorrect type: " + str(type(self.path)) + ", instance passed='" + repr(self.path) + "'")
 	@abstractmethod
 	def _makeFilePath(self, newPath):
 		pass
@@ -274,7 +275,7 @@ class PathAbstract(object):
 				returnArgs.insert(i, str(args[i]))
 			elif ArgDescForPaths.FILE in argDesc and isinstance(args[i], fileObjectClass):
 				returnArgs.insert(i, str(args[i]._getPath()))
-			elif isinstance(args[i], str) or isinstance(args[i], unicode):
+			elif isinstance(args[i], basestring):
 				returnArgs.insert(i, args[i])
 			else:
 				raise Exception("Could not convert argument " + str(i) + ", args=" + str(args))
@@ -332,7 +333,7 @@ class PathAbstract(object):
 				if isinstance(arg, FilePath):
 					raise Exception("Tried to join a FilePath on the left with a FilePath on the right")
 			return self._makeFilePath(rawReturnValue)
-		elif isinstance(inputArgs[-1], str) or isinstance(inputArgs[-1], unicode):
+		elif isinstance(inputArgs[-1], basestring):
 			if funcName == "join":
 				raise Exception("Could not determine output type of join call. Specifically use a FilePath or FolderPath instance as the last argument in the join call instead, or use the joinFile or joinFolder methods.")
 			elif funcName == "joinFile":
