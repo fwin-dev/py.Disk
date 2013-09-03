@@ -1,0 +1,10 @@
+<map id="object" name="object">
+<area shape="rect" id="node2" href="$class_disk_1_1__base_1_1_file.html" title="{Disk._base.File\n|+ mode\l+ isDestructed\l|+ __init__()\l+ __str__()\l+ __repr__()\l+ __enter__()\l+ __exit__()\l+ getPath()\l+ isWritable()\l+ isClosed()\l+ destruct()\l+ reopen()\l}" alt="" coords="42,131,155,355"/>
+<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_path_abstract.html" title="{Disk._base.PathAbstract\n|+ path\l|+ __init__()\l+ asStr()\l+ __str__()\l+ __repr__()\l+ __add__()\l+ __radd__()\l+ __eq__()\l+ __hash__()\l+ __getattr__()\l+ splitAll()\l}" alt="" coords="189,138,357,347"/>
+<area shape="rect" id="node3" href="$class_disk_1_1_local_1_1___file_1_1_base_file.html" title="Abstract concept of a file object. " alt="" coords="5,403,176,583"/>
+<area shape="rect" id="node4" href="$class_disk_1_1_local_1_1___file_1_1_file.html" title="Implementation of BaseFile using a FilePath instance to store the path. " alt="" coords="17,647,159,724"/>
+<area shape="rect" id="node6" href="$class_disk_1_1__base_1_1_file_path.html" title="{Disk._base.FilePath\n||+ __init__()\l+ asFile()\l+ create()\l+ copyDates()\l+ copy()\l+ move()\l+ rename()\l+ isBinary()\l}" alt="" coords="203,403,343,583"/>
+<area shape="rect" id="node8" href="$class_disk_1_1__base_1_1_folder_path.html" title="Abstract concept of a folder path. " alt="" coords="388,411,545,576"/>
+<area shape="rect" id="node7" href="$class_disk_1_1_local_1_1___paths_1_1_file_path.html" title="A locally accessible file path. " alt="" coords="183,632,364,739"/>
+<area shape="rect" id="node9" href="$class_disk_1_1_local_1_1___paths_1_1_folder_path.html" title="A locally accessible folder path. " alt="" coords="388,639,585,731"/>
+</map>

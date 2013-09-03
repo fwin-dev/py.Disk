@@ -4,9 +4,8 @@ var namespace_disk =
     [ "CompressedFile", "namespace_disk_1_1_compressed_file.html", "namespace_disk_1_1_compressed_file" ],
     [ "ConfigFile", "namespace_disk_1_1_config_file.html", "namespace_disk_1_1_config_file" ],
     [ "Local", "namespace_disk_1_1_local.html", "namespace_disk_1_1_local" ],
-    [ "SSH", "namespace_disk_1_1_s_s_h.html", "namespace_disk_1_1_s_s_h" ],
     [ "TempFile", "namespace_disk_1_1_temp_file.html", "namespace_disk_1_1_temp_file" ],
     [ "TempFolder", "namespace_disk_1_1_temp_folder.html", "namespace_disk_1_1_temp_folder" ],
-    [ "UnitTests", "namespace_disk_1_1_unit_tests.html", "namespace_disk_1_1_unit_tests" ],
+    [ "Test_Abstract", "namespace_disk_1_1_test___abstract.html", "namespace_disk_1_1_test___abstract" ],
     [ "Walker", "namespace_disk_1_1_walker.html", "namespace_disk_1_1_walker" ]
 ];
