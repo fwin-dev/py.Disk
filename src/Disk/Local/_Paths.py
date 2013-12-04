@@ -16,6 +16,26 @@ class PathAbstract(object):
 	def _buildFunc(self, funcName, argParser):
 		"""Hook for argument and return value conversion."""
 		return _buildFunc(funcName, argParser, self)
+	
+	def move(self, destPath):
+		"""
+		Moves a file or folder to destPath.
+		
+		Performs a local move operation if the source file path and destination are both on the same drive.
+		"""
+		if isinstance(destPath, self.__class__):
+			shutil.move(str(self), str(destPath))
+		else:
+			return _base.FilePath.move(self, destPath)
+
+def _buildFunc(funcName, argParser, pathInstance):
+	func = argParser.getBuiltinFunction(funcName, False)
+	def _run(*args):
+		args = [pathInstance] + list(args)
+		result = func(*(pathInstance._argsConvert_input(funcName, argParser, args)))
+		return pathInstance._argsConvert_output(funcName, argParser, result, args)
+	return _run
+
 
 class FolderPath(PathAbstract, _base.FolderPath):
 	"""A locally accessible folder path."""
@@ -37,24 +57,3 @@ class FilePath(PathAbstract, _base.FilePath):
 		"""
 		from _File import File
 		return File(self.asStr(), mode)
-	
-	def move(self, destFilePath):
-		"""
-		Moves a file to destFilePath.
-		
-		Performs a local move operation if the source file path and destination are both local.
-		"""
-		if isinstance(destFilePath, self.__class__):	# shortcut for when file is on same drive - don't do copy then delete
-			shutil.move(str(self), str(destFilePath))
-		else:
-			return _base.FilePath.move(self, destFilePath)
-
-
-def _buildFunc(funcName, argParser, pathInstance):
-	func = argParser.getBuiltinFunction(funcName, False)
-	def _run(*args):
-		args = [pathInstance] + list(args)
-		result = func(*(pathInstance._argsConvert_input(funcName, argParser, args)))
-		return pathInstance._argsConvert_output(funcName, argParser, result, args)
-	return _run
-
