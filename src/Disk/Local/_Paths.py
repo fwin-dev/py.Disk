@@ -3,7 +3,7 @@ import OS
 
 import shutil
 
-class PathAbstract:
+class PathAbstract(object):
 	"""
 	Abstract concept of a file or folder path.
 	
@@ -45,7 +45,7 @@ class FilePath(PathAbstract, _base.FilePath):
 		Performs a local move operation if the source file path and destination are both local.
 		"""
 		if isinstance(destFilePath, self.__class__):	# shortcut for when file is on same drive - don't do copy then delete
-			OS.runCMD("mv %s %s", (str(self), str(destFilePath)))
+			shutil.move(str(self), str(destFilePath))
 		else:
 			return _base.FilePath.move(self, destFilePath)
 
