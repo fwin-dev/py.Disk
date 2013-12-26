@@ -15,14 +15,18 @@ class FilePathAbstract:
 	
 	def setUp(self):
 		super(FilePathAbstract, self).setUp()
-		print("writing file")
+		if self.srcFilePath.exists():
+			self.srcFilePath.remove()
 		self._writeSrcFile()
-		assert not self.destFilePath.exists()
+		if self.destFilePath.exists():
+			self.destFilePath.remove()
 	def _writeSrcFile(self):
-		assert not self.srcFilePath.exists()
 		with self.srcFilePath.asFile("w") as srcFile:
 			srcFile.write("abcdef\nghijkl\n")
+		print(self.srcFilePath.getmtime())
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0
+		if self.srcFilePath.getmtime() != int(self.srcFilePath.getmtime()):
+			print("WARNING: Your OS does not support fractional time precision on files")
 	def tearDown(self):
 		super(FilePathAbstract, self).tearDown()
 		if self.destFilePath.exists():
@@ -54,9 +58,7 @@ class FilePathAbstract:
 		self.srcFilePath.copy(self.destFilePath, shouldCopyDates=True)
 		self.assertTrue(self.srcFilePath.exists() and self.srcFilePath.getsize() > 0, "Source file was modified on a copy operation!!")
 		self.assertEqual(self.srcFilePath.getsize(), self.destFilePath.getsize(), "Source file contents were not entirely copied to the destination file")
-		
-		# python 3.3 adds support for nanosecond precision, but < 3.3 only guarantees second precision
-		self.assertEqual(int(self.srcFilePath.getmtime()), int(self.destFilePath.getmtime()), "Source file 'last modified' timestamp was not copied correctly to the destination file")
+		self.assertEqual(self.srcFilePath.getmtime(), self.destFilePath.getmtime(), "Source file 'last modified' timestamp was not copied correctly to the destination file, or filesystems do not support the same precision")
 	
 	def test_copy_noModifiedDate(self):
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0
@@ -64,9 +66,7 @@ class FilePathAbstract:
 		self.srcFilePath.copy(self.destFilePath, shouldCopyDates=False)
 		self.assertTrue(self.srcFilePath.exists() and self.srcFilePath.getsize() > 0, "Source file was modified on a copy operation!!")
 		self.assertEqual(self.srcFilePath.getsize(), self.destFilePath.getsize(), "Source file contents were not entirely copied to the destination file")
-		
-		# python 3.3 adds support for nanosecond precision, but < 3.3 only guarantees second precision
-		self.assertNotEqual(int(self.srcFilePath.getmtime()), int(self.destFilePath.getmtime()), "Source file 'last modified' timestamp was not copied correctly to the destination file")
+		self.assertNotEqual(self.srcFilePath.getmtime(), self.destFilePath.getmtime(), "Source file 'last modified' timestamp was not copied correctly to the destination file, or filesystems do not support the same precision")
 	
 	def test_move(self):
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0
