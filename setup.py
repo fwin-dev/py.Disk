@@ -2,7 +2,6 @@ from setuptools import setup, find_packages
 from setuptools.command.install import install as _install
 
 import sys
-
 class InstallHook(_install):
 	def run(self):
 		self.preInstall()
@@ -14,7 +13,7 @@ class InstallHook(_install):
 setup(
 	cmdclass = {"install": InstallHook},
 	name = "py.Disk",
-	version = "1.0.2",
+	version = "1.0.3.dev03",
 	description = "Object oriented API for working with files and folders",
 	author = "Jesse Cowles",
 	author_email = "jcowles@indigital.net",
