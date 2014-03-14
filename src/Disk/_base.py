@@ -231,7 +231,7 @@ class PathAbstract(object):
 		elif name in OSFuncs.ALL_FUNCS:
 			argParser = OSFuncs
 		else:
-			raise AttributeError
+			raise AttributeError(name)
 		return self._buildFunc(name, argParser)
 	
 	@classmethod
