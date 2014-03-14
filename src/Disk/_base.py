@@ -423,6 +423,12 @@ class FilePath(PathAbstract):
 		self.move(newFilePath)
 		return newFilePath
 	
+	def mkdirs(self, *args, **kwargs):
+		"""@see makedirs()"""
+		return self.makedirs(*args, **kwargs)
+	def makedirs(self, *args, **kwargs):
+		return self.dirname().makedirs(*args, **kwargs)
+	
 	def isBinary(self):
 		"""
 		http://stackoverflow.com/questions/898669/how-can-i-detect-if-a-file-is-binary-non-text-in-python
