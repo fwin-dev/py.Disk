@@ -472,12 +472,21 @@ class FolderPath(PathAbstract):
 			else:
 				return self.rmtree()
 	
+	def mkdir(self, *args, **kwargs):
+		if not self.exists():
+			return super(FolderPath, self)._getattr("mkdir")(*args, **kwargs)
+		return None
 	def makedir(self, *args, **kwargs):
 		"""@see mkdir(...)"""
 		return self.mkdir(*args, **kwargs)
 	def mkdirs(self, *args, **kwargs):
 		"""@see makedirs(...)"""
 		return self.makedirs(*args, **kwargs)
+	def makedirs(self, *args, **kwargs):
+		if not self.exists():
+			return super(FolderPath, self)._getattr("makedirs")(*args, **kwargs)
+		return None
+	
 	def walk(self, isRecursive, wantFiles, wantFolders, followSymlinks=True, nameGlob="*", topDown=True):
 		"""@see WalkerAbstract.walk"""
 		return self._walkerClass.walk(self, isRecursive, wantFiles, wantFolders, followSymlinks, nameGlob, topDown)
