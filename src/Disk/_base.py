@@ -226,6 +226,10 @@ class PathAbstract(object):
 	def _buildFunc(self, funcName, argParser):
 		pass
 	def __getattr__(self, name):
+		return self._getattr(name)
+	def _getattr(self, name):
+		# had to add an extra layer of indirection here (extra getattr method) because of __getattr__ with super(...) limitation
+		# http://stackoverflow.com/questions/12047847/super-object-not-calling-getattr
 		if name in OSPathFuncs.ALL_FUNCS:
 			argParser = OSPathFuncs
 		elif name in OSFuncs.ALL_FUNCS:
