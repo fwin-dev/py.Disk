@@ -1,16 +1,16 @@
 from __future__ import print_function
-from Lang.FuncTools import Abstraction
+from Lang.FuncTools import StaticDescriptors
 
 from Lang.Struct import OrderedDict
 from abc import ABCMeta, abstractmethod
 import os, os.path, shutil
 
-class ArgDescForPaths(Abstraction.ArgDesc):
+class ArgDescForPaths(StaticDescriptors.ArgDesc):
 	OTHER = 4
 	FILE = 5
 	FOLDER = 6
 
-class PathFuncsAbstract(Abstraction.Descriptor):
+class PathFuncsAbstract(StaticDescriptors.Descriptor):
 	def isLocal(self, name):
 		assert name not in self.REMOTE_UNSUPPORTED
 		assert name in self.LOCAL + self.REMOTE
