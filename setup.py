@@ -22,6 +22,8 @@ setup(
 	package_dir = {"":"src"},
 	packages = find_packages("src"),
 	zip_safe = False,
+	test_suite = "test",
+	
 	install_requires = [
 		"py.Lang",
 		"py.OS",
