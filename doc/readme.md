@@ -22,7 +22,7 @@ The Disk API is fairly big and provides:
 	filePath = Local.FilePath("path/to/file.txt")
 	folderPath = Local.FolderPath("path/to/local/folder")
 
-`FilePath` instances have methods similar to what is available in python's built in `os.path`, except that the
+`FilePath` instances have methods similar to what is available in python's built-in `os.path`, except that the
 first argument of all methods in `os.path` is not needed because functions in `os.path` are not attached to a
 class instance, whereas functions belonging to a `FilePath` class are. (This is similar to the move from all
 string functions being stored in the `string` module to becoming methods of string objects.) For example, to
@@ -76,7 +76,7 @@ Temporary folders are the same as a `Local.FolderPath` above, with a pre-set fol
 
 ## File objects
 
-File objects here are similar to the objects returned by python's built in `open()` function, but have some
+File objects here are similar to the objects returned by python's built-in `open()` function, but have some
 differences/improvements. Here are some examples:
 
 	from Disk import Local
@@ -117,7 +117,7 @@ Also, these 3 classes can be mixed interchangably in arguments, so for example, 
 
 ## Improved ZipFile
 
-The built in python `ZipFile` module/class has a bug where unix chmod file attributes within the zip are not restored
+The built-in python `ZipFile` module/class has a bug where unix chmod file attributes within the zip are not restored
 when unzipped. The new `ZipFile` module included here fixes that.
 
 	from Disk.CompressedFile import ZipFile
