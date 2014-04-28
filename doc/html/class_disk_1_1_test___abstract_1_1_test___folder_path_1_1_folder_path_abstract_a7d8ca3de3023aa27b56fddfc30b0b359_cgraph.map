@@ -1,4 +1,0 @@
-<map id="Disk.Test_Abstract.Test_FolderPath.FolderPathAbstract.test_join_folderWithRelFile" name="Disk.Test_Abstract.Test_FolderPath.FolderPathAbstract.test_join_folderWithRelFile">
-<area shape="rect" id="node2" href="$class_disk_1_1_test___abstract_1_1_test___folder_path_1_1_folder_path_abstract.html#a23687bc7490c89a104ef161b23f96831" title="A relative FilePath instance, only for testing interaction of the FolderPath instance with a FilePath..." alt="" coords="293,5,523,61"/>
-<area shape="rect" id="node3" href="$class_disk_1_1_test___abstract_1_1_test___folder_path_1_1_folder_path_abstract.html#adc65f1819d16882c4a2b6566598b73da" title="This file path will be used to copy data from, in order to test destFilePath. " alt="" coords="291,85,525,141"/>
-</map>

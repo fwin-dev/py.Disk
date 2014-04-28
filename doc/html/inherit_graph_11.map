@@ -1,4 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_disk_1_1_walker_1_1_walker_abstract.html" title="Gets a list of files and/or folders in a folder. " alt="" coords="5,12,192,39"/>
-<area shape="rect" id="node2" href="$class_disk_1_1_local_1_1___walker_1_1_local_folder_walker.html" title="Implementation of WalkerAbstract for folders on the local system. " alt="" coords="241,5,413,46"/>
-</map>

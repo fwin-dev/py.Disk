@@ -1,6 +1,0 @@
-<map id="Disk.Local._Paths.FolderPath" name="Disk.Local._Paths.FolderPath">
-<area shape="rect" id="node2" href="$class_disk_1_1_local_1_1___paths_1_1_path_abstract.html" title="Abstract concept of a file or folder path. " alt="" coords="5,433,213,511"/>
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_folder_path.html" title="Abstract concept of a folder path. " alt="" coords="239,389,396,555"/>
-<area shape="rect" id="node4" href="$class_disk_1_1__base_1_1_path_abstract.html" title="{Disk._base.PathAbstract\n|+ path\l|+ __init__()\l+ asStr()\l+ __str__()\l+ __repr__()\l+ __add__()\l+ __radd__()\l+ __eq__()\l+ __hash__()\l+ __getattr__()\l+ splitAll()\l}" alt="" coords="233,131,401,341"/>
-<area shape="rect" id="node5" href="$classobject.html" title="{object\n||}" alt="" coords="289,5,345,83"/>
-</map>

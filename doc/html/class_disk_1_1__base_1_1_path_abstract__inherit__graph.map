@@ -1,7 +1,0 @@
-<map id="Disk._base.PathAbstract" name="Disk._base.PathAbstract">
-<area shape="rect" id="node3" href="$class_disk_1_1__base_1_1_file_path.html" title="{Disk._base.FilePath\n||+ __init__()\l+ asFile()\l+ create()\l+ copyDates()\l+ copy()\l+ move()\l+ rename()\l+ isBinary()\l}" alt="" coords="35,390,175,570"/>
-<area shape="rect" id="node5" href="$class_disk_1_1__base_1_1_folder_path.html" title="Abstract concept of a folder path. " alt="" coords="220,397,377,563"/>
-<area shape="rect" id="node2" href="$classobject.html" title="{object\n||}" alt="" coords="163,5,220,83"/>
-<area shape="rect" id="node4" href="$class_disk_1_1_local_1_1___paths_1_1_file_path.html" title="A locally accessible file path. " alt="" coords="5,619,187,725"/>
-<area shape="rect" id="node6" href="$class_disk_1_1_local_1_1___paths_1_1_folder_path.html" title="A locally accessible folder path. " alt="" coords="211,626,408,718"/>
-</map>
