@@ -17,7 +17,7 @@ setup(
 	description = "Object oriented API for working with files and folders",
 	author = "Jesse Cowles",
 	author_email = "jcowles@indigital.net",
-	url = "http://projects.indigitaldev.net/py.Disk",
+	url = "http://projects.indigitaldev.net/jcowles/py.Disk",
 	
 	package_dir = {"":"src"},
 	packages = find_packages("src"),
