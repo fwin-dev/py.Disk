@@ -13,9 +13,9 @@ class File(object):
 		self.mode = mode
 		self.isDestructed = False
 	
-	def __str__(self, message=None, extraPairDict=None):
+	def __str__(self, message=None, extraPairDict={}):
 		return self.__repr__(message=message, extraPairDict=extraPairDict)
-	def __repr__(self, valueLabel=None, value=None, extraPairDict=None, message=None):
+	def __repr__(self, valueLabel=None, value=None, extraPairDict={}, message=None):
 		if valueLabel == None:
 			valuePairs = OrderedDict()
 			valuePairs["getPath"] = "'" + str(self.getPath()) + "'"
@@ -23,8 +23,7 @@ class File(object):
 			valuePairs["isWritable"] = self.isWritable()
 			valuePairs["isClosed"] = self.isClosed()
 			valuePairs["isDestructed"] = self.isDestructed
-			if extraPairDict != None:
-				valuePairs.update(extraPairDict)
+			valuePairs.update(extraPairDict)
 		else:
 			valuePairs = {valueLabel: value}
 		str_ = ", ".join([name + "=" + str(value) for name, value in valuePairs.iteritems()])

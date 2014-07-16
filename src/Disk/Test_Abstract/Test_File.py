@@ -33,7 +33,7 @@ class FileAbstract:
 		self.assert_(file_.getPath().stat().st_size > 0, "len(written file) == 0")
 	
 	def test_repr(self):
-		file_ = self.filePath.asFile("w+b")
+		file_ = self.filePath.asFile("rb")
 		str(file_)
 	
 	def test_noWith_misc(self):
