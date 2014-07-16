@@ -292,7 +292,7 @@ class FilePath(PathAbstract):
 		temp.destruct()
 		
 		with self.asFile("rb") as sourceFileObj:
-			shutil.copyfileobj(sourceFileObj, destFileObj, 1024*100)
+			shutil.copyfileobj(sourceFileObj, destFileObj, 1024*128)
 		
 		destFileObj.close()
 #		print(self.__repr__("size right after copy/move:" + str(destFilePath.getsize())))
