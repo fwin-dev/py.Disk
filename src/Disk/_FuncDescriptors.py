@@ -1,3 +1,4 @@
+from Lang.ClassTools.Patterns import Singleton_OnDupReturnExisting
 from Lang.FuncTools.Abstraction import abstractmethod
 
 import os.path
@@ -30,7 +31,7 @@ class ArgDescForPaths(ArgDesc):
 	FILE = 5
 	FOLDER = 6
 
-class PathFuncsAbstract(Descriptor):
+class PathFuncsAbstract(Singleton_OnDupReturnExisting, Descriptor):
 	def isLocal(self, name):
 		assert name not in self.REMOTE_UNSUPPORTED
 		assert name in self.LOCAL + self.REMOTE
@@ -98,7 +99,6 @@ class OSPathFuncs(PathFuncsAbstract):
 		if funcName in ("joinFile", "joinFolder"):
 			funcName = "join"
 		return super(OSPathFuncs, cls).getBuiltinFuncReference(os.path, "os.path", funcName=funcName, asStr=asStr)
-OSPathFuncs = OSPathFuncs()
 
 
 class OSFuncs(PathFuncsAbstract):
@@ -129,4 +129,3 @@ class OSFuncs(PathFuncsAbstract):
 	@classmethod
 	def getBuiltinFuncReference(cls, funcName, asStr=False):
 		return super(OSFuncs, cls).getBuiltinFuncReference(os, "os", funcName=funcName, asStr=asStr)
-OSFuncs = OSFuncs()
