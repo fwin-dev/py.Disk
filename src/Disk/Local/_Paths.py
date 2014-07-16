@@ -13,9 +13,9 @@ class PathAbstract(object):
 		return FilePath(newPath)
 	def _makeFolderPath(self, newPath):
 		return FolderPath(newPath)
-	def _buildFunc(self, funcName, argParser):
+	def _buildFunc(self, funcName, funcDescriptor):
 		"""Hook for argument and return value conversion."""
-		return _buildFunc(funcName, argParser, self)
+		return _buildFunc(funcName, funcDescriptor, self)
 	
 	def move(self, destPath):
 		"""
@@ -28,12 +28,12 @@ class PathAbstract(object):
 		else:
 			return _base.FilePath.move(self, destPath)
 
-def _buildFunc(funcName, argParser, pathInstance):
-	func = argParser.getBuiltinFunction(funcName, False)
+def _buildFunc(funcName, funcDescriptor, pathInstance):
+	func = funcDescriptor.getBuiltinFunction(funcName, False)
 	def _run(*args):
 		args = [pathInstance] + list(args)
-		result = func(*(pathInstance._argsConvert_input(funcName, argParser, args)))
-		return pathInstance._argsConvert_output(funcName, argParser, result, args)
+		result = func(*(pathInstance._argsConvert_input(funcName, funcDescriptor, args)))
+		return pathInstance._argsConvert_output(funcName, funcDescriptor, result, args)
 	return _run
 
 

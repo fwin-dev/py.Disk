@@ -120,7 +120,7 @@ class PathAbstract(object):
 		return hash((self.__class__, self.path))
 	
 	@abstractmethod
-	def _buildFunc(self, funcName, argParser):
+	def _buildFunc(self, funcName, funcDescriptor):
 		pass
 	def __getattr__(self, name):
 		return self._getattr(name)
@@ -128,12 +128,12 @@ class PathAbstract(object):
 		# had to add an extra layer of indirection here (extra getattr method) because of __getattr__ with super(...) limitation
 		# http://stackoverflow.com/questions/12047847/super-object-not-calling-getattr
 		if name in OSPathFuncs.ALL_FUNCS:
-			argParser = OSPathFuncs
+			funcDescriptor = OSPathFuncs
 		elif name in OSFuncs.ALL_FUNCS:
-			argParser = OSFuncs
+			funcDescriptor = OSFuncs
 		else:
 			raise AttributeError(name)
-		return self._buildFunc(name, argParser)
+		return self._buildFunc(name, funcDescriptor)
 	
 	@classmethod
 	def _getClassTypes(cls, classType=None):
@@ -149,14 +149,14 @@ class PathAbstract(object):
 		return fileObjectClass, filePathClass, folderPathClass
 	
 	@classmethod
-	def _argsConvert_input(cls, funcName, argParser, args):
+	def _argsConvert_input(cls, funcName, funcDescriptor, args):
 		if funcName == "utime":
 			if len(args) == 3:
 				args = [args[0], (args[1], args[2])]
 			elif len(args) != 2:
 				raise Exception()
 		
-		allArgDesc = argParser.getArgTypes(funcName)
+		allArgDesc = funcDescriptor.getArgTypes(funcName)
 		fileObjectClass, filePathClass, folderPathClass = cls._getClassTypes()
 		returnArgs = []
 		
@@ -185,17 +185,17 @@ class PathAbstract(object):
 			returnArgs = [returnArgs]
 		return returnArgs
 	
-	def _argsConvert_output(self, funcName, argParser, rawReturnValue, inputArgs):
-		if funcName in argParser.RETURN_FILE:
+	def _argsConvert_output(self, funcName, funcDescriptor, rawReturnValue, inputArgs):
+		if funcName in funcDescriptor.RETURN_FILE:
 			return self._makeFilePath(rawReturnValue)
-		elif funcName in argParser.RETURN_FOLDER:
+		elif funcName in funcDescriptor.RETURN_FOLDER:
 			return self._makeFolderPath(rawReturnValue)
-		elif funcName in argParser.RETURN_SAME_AS_INPUT_TYPE:
+		elif funcName in funcDescriptor.RETURN_SAME_AS_INPUT_TYPE:
 			return self._argsConvert_output_sameAsInputType(inputArgs[0], rawReturnValue)
-		elif funcName in argParser.RETURN_OTHER:
+		elif funcName in funcDescriptor.RETURN_OTHER:
 			return rawReturnValue
-		elif funcName in argParser.RETURN_SPECIAL:
-			return self._argsConvert_output_special(funcName, argParser, rawReturnValue, inputArgs)
+		elif funcName in funcDescriptor.RETURN_SPECIAL:
+			return self._argsConvert_output_special(funcName, funcDescriptor, rawReturnValue, inputArgs)
 		else:
 			raise Exception("Unknown return type for function - can't convert to a PathAbstract type")
 	
@@ -208,7 +208,7 @@ class PathAbstract(object):
 		else:
 			raise Exception("Return value from os or os.path function can't be converted to a PathAbstract type because input argument type of function could not be determined")
 	
-	def _argsConvert_output_special(self, funcName, argParser, rawReturnValue, inputArgs):
+	def _argsConvert_output_special(self, funcName, funcDescriptor, rawReturnValue, inputArgs):
 		if funcName in ("join", "joinFile", "joinFolder"):
 			return self._argsConvert_output_special_join(funcName, inputArgs, rawReturnValue)
 		elif funcName == "splitext":
