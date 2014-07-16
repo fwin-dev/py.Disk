@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from _Funcs import ArgDescForPaths, OSPathFuncs, OSFuncs
+from _FuncDescriptors import ArgDescForPaths, OSPathFuncs, OSFuncs
 
 from Lang.Struct import OrderedDict
 from abc import ABCMeta, abstractmethod
