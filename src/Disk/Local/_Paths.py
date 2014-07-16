@@ -42,9 +42,6 @@ class FolderPath(PathAbstract, _base.FolderPath):
 	def __init__(self, path):
 		from _Walker import LocalFolderWalker
 		_base.FolderPath.__init__(self, path, LocalFolderWalker)
-	def rmtree(self):
-		"""@see shutil.rmtree"""
-		return shutil.rmtree(str(self))
 
 class FilePath(PathAbstract, _base.FilePath):
 	"""A locally accessible file path."""

@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from _FuncDescriptors import ArgDescForPaths, OSPathFuncs, OSFuncs
+from _FuncDescriptors import ArgDescForPaths, PathFuncsAbstract
 
 from Lang.Struct import OrderedDict
 from abc import ABCMeta, abstractmethod
@@ -127,11 +127,8 @@ class PathAbstract(object):
 	def _getattr(self, name):
 		# had to add an extra layer of indirection here (extra getattr method) because of __getattr__ with super(...) limitation
 		# http://stackoverflow.com/questions/12047847/super-object-not-calling-getattr
-		if name in OSPathFuncs.ALL_FUNCS:
-			funcDescriptor = OSPathFuncs
-		elif name in OSFuncs.ALL_FUNCS:
-			funcDescriptor = OSFuncs
-		else:
+		funcDescriptor = PathFuncsAbstract.getDescriptorForFunc(name)
+		if funcDescriptor == None:
 			raise AttributeError(name)
 		return self._buildFunc(name, funcDescriptor)
 	
@@ -358,9 +355,6 @@ class FolderPath(PathAbstract):
 		"""Create directory if not exists"""
 		if not self.exists():
 			return self.mkdirs()
-	@abstractmethod
-	def rmtree(self):
-		pass
 	def remove(self, isRecursive=False):
 		"""Remove folder and contents if it exists."""
 		if self.exists():

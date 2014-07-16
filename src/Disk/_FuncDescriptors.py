@@ -1,6 +1,7 @@
 from Lang.ClassTools.Patterns import Singleton_OnDupReturnExisting
 from Lang.FuncTools.Abstraction import abstractmethod
 
+import shutil
 import os.path
 import os
 
@@ -32,6 +33,13 @@ class ArgDescForPaths(ArgDesc):
 	FOLDER = 6
 
 class PathFuncsAbstract(Singleton_OnDupReturnExisting, Descriptor):
+	@classmethod
+	def getDescriptorForFunc(cls, funcName):
+		for descriptor in cls.getAllInstances().itervalues():
+			if funcName in descriptor.ALL_FUNCS:
+				return descriptor
+		return None
+	
 	def isLocal(self, name):
 		assert name not in self.REMOTE_UNSUPPORTED
 		assert name in self.LOCAL + self.REMOTE
@@ -99,6 +107,32 @@ class OSPathFuncs(PathFuncsAbstract):
 		if funcName in ("joinFile", "joinFolder"):
 			funcName = "join"
 		return super(OSPathFuncs, cls).getBuiltinFuncReference(os.path, "os.path", funcName=funcName, asStr=asStr)
+_OSPathFuncs = OSPathFuncs()
+
+
+class ShutilFuncs(PathFuncsAbstract):
+	def __init__(self):
+		self.SINGLE_PATH_ARG = ("rmtree",)
+		self.ALL_FUNCS = self.SINGLE_PATH_ARG
+		
+		self.LOCAL = tuple()
+		self.REMOTE = ("rmtree",)
+		self.REMOTE_UNSUPPORTED = tuple()
+		
+		self.INPUTARGS_FILE = tuple()
+		self.INPUTARGS_FOLDER = ("rmtree",)
+		self.INPUTARGS_FILE_FOLDER = tuple(filter(lambda x: x not in self.INPUTARGS_FILE + self.INPUTARGS_FOLDER, self.ALL_FUNCS))
+		
+		self.RETURN_FILE = tuple()
+		self.RETURN_FOLDER = tuple()
+		self.RETURN_SAME_AS_INPUT_TYPE = tuple()
+		self.RETURN_SPECIAL = tuple()
+		self.RETURN_OTHER = tuple(filter(lambda x: x not in self.RETURN_FILE + self.RETURN_FOLDER + self.RETURN_SAME_AS_INPUT_TYPE + self.RETURN_SPECIAL, self.ALL_FUNCS))
+
+	@classmethod
+	def getBuiltinFuncReference(cls, funcName, asStr=False):
+		return super(ShutilFuncs, cls).getBuiltinFuncReference(shutil, "shutil", funcName=funcName, asStr=asStr)
+_ShutilFuncs = ShutilFuncs()
 
 
 class OSFuncs(PathFuncsAbstract):
@@ -129,3 +163,4 @@ class OSFuncs(PathFuncsAbstract):
 	@classmethod
 	def getBuiltinFuncReference(cls, funcName, asStr=False):
 		return super(OSFuncs, cls).getBuiltinFuncReference(os, "os", funcName=funcName, asStr=asStr)
+_OSFuncs = OSFuncs()
