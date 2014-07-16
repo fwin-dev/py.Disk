@@ -1,6 +1,7 @@
 from Lang.FuncTools.Abstraction import abstractmethod
 
 import os.path
+import os
 
 class FuncDesc:
 	LOCAL = 2
@@ -56,6 +57,17 @@ class PathFuncsAbstract(Descriptor):
 			raise AttributeError
 		
 		return types
+	
+	@classmethod
+	def getBuiltinFuncReference(cls, module, moduleName, funcName, asStr=False):
+		"""
+		@return tuple: Index 0 is either the module itself if asStr=False or the module name (with package name) as a string if asStr=True. Similarly, index 1 is the function itself if asStr=False or the function name if asStr=True.
+		"""
+		if not asStr:
+			return module, getattr(module, funcName)
+		else:
+			assert hasattr(module, funcName)
+			return moduleName, funcName
 
 
 class OSPathFuncs(PathFuncsAbstract):
@@ -85,11 +97,7 @@ class OSPathFuncs(PathFuncsAbstract):
 	def getBuiltinFuncReference(cls, funcName, asStr=False):
 		if funcName in ("joinFile", "joinFolder"):
 			funcName = "join"
-		if not asStr:
-			return getattr(os.path, funcName)
-		else:
-			assert hasattr(os.path, funcName)
-			return "os.path." + funcName
+		return super(OSPathFuncs, cls).getBuiltinFuncReference(os.path, "os.path", funcName=funcName, asStr=asStr)
 OSPathFuncs = OSPathFuncs()
 
 
@@ -120,9 +128,5 @@ class OSFuncs(PathFuncsAbstract):
 	
 	@classmethod
 	def getBuiltinFuncReference(cls, funcName, asStr=False):
-		if not asStr:
-			return getattr(os, funcName)
-		else:
-			assert hasattr(os, funcName)
-			return "os." + funcName
+		return super(OSFuncs, cls).getBuiltinFuncReference(os, "os", funcName=funcName, asStr=asStr)
 OSFuncs = OSFuncs()
