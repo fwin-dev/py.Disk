@@ -25,7 +25,7 @@ class FilePathAbstract:
 			srcFile.write("abcdef\nghijkl\n")
 		print(self.srcFilePath.getmtime())
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0
-		if self.srcFilePath.getmtime() != int(self.srcFilePath.getmtime()):
+		if self.srcFilePath.getmtime() == int(self.srcFilePath.getmtime()):
 			print("WARNING: Your OS does not support fractional time precision on files")
 	def tearDown(self):
 		super(FilePathAbstract, self).tearDown()
