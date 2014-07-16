@@ -29,7 +29,7 @@ class PathAbstract(object):
 			return _base.FilePath.move(self, destPath)
 
 def _buildFunc(funcName, funcDescriptor, pathInstance):
-	func = funcDescriptor.getBuiltinFunction(funcName, False)
+	func = funcDescriptor.getBuiltinFuncReference(funcName, False)
 	def _run(*args):
 		args = [pathInstance] + list(args)
 		result = func(*(pathInstance._argsConvert_input(funcName, funcDescriptor, args)))

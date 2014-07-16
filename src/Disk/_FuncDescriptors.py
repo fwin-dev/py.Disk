@@ -21,7 +21,7 @@ class Descriptor(object):
 		pass
 	@classmethod
 	@abstractmethod
-	def getBuiltinFunction(cls, funcName, asStr=False):
+	def getBuiltinFuncReference(cls, funcName, asStr=False):
 		pass
 
 class ArgDescForPaths(ArgDesc):
@@ -82,7 +82,7 @@ class OSPathFuncs(PathFuncsAbstract):
 		self.RETURN_OTHER = tuple(filter(lambda x: x not in self.RETURN_FILE + self.RETURN_FOLDER + self.RETURN_SAME_AS_INPUT_TYPE + self.RETURN_SPECIAL, self.ALL_FUNCS))
 	
 	@classmethod
-	def getBuiltinFunction(cls, funcName, asStr=False):
+	def getBuiltinFuncReference(cls, funcName, asStr=False):
 		if funcName in ("joinFile", "joinFolder"):
 			funcName = "join"
 		if not asStr:
@@ -119,7 +119,7 @@ class OSFuncs(PathFuncsAbstract):
 		self.RETURN_OTHER = tuple(filter(lambda x: x not in self.RETURN_FILE + self.RETURN_FOLDER + self.RETURN_SAME_AS_INPUT_TYPE + self.RETURN_SPECIAL, self.ALL_FUNCS))
 	
 	@classmethod
-	def getBuiltinFunction(cls, funcName, asStr=False):
+	def getBuiltinFuncReference(cls, funcName, asStr=False):
 		if not asStr:
 			return getattr(os, funcName)
 		else:
