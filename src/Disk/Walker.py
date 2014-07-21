@@ -19,6 +19,14 @@ class WalkerAbstract:
 		cls.allWalkers[folderPathType] = walkerType
 	
 	@classmethod
+	def _checkReadAccess(cls, folder):
+		try:
+			if not folder.access(os.R_OK):
+				raise Exception("Permission denied while reading folder: '" + str(folder) + "'")
+		except NotImplementedError:		# some Disk library implementations can't handle os.access method (py.Disk.FTP)
+			pass
+	
+	@classmethod
 	def walk(cls, rootFolder, isRecursive, wantFiles, wantFolders, followSymlinks=False, nameGlob="*", topDown=True):
 		"""
 		Gets a list of files and/or folders in a folder.
@@ -32,8 +40,7 @@ class WalkerAbstract:
 		walkerClass = cls.allWalkers[rootFolder.__class__]
 		if not rootFolder.exists():
 			raise Exception("Folder to walk does not exist: '" + str(rootFolder) + "'")
-		if not rootFolder.access(os.R_OK):
-			raise Exception("Permission denied while reading folder: '" + str(rootFolder) + "'")
+		cls._checkReadAccess(rootFolder)
 		rootFolder = rootFolder.abspath()
 		results = []
 		
@@ -54,8 +61,8 @@ class WalkerAbstract:
 				for currentFolder in currentFolders:
 					if nameGlob == "*" or any([fnmatchcase(currentFolder, singleNameGlob) for singleNameGlob in nameGlob]):
 						currentFolder = rootFolder._makeFolderPath(os.path.join(currentRoot, currentFolder))
-						if isRecursive and not currentFolder.access(os.R_OK):
-							raise Exception("Permission denied while reading folder: '" + str(rootFolder) + "'")
+						if isRecursive:
+							cls._checkReadAccess(currentFolder)
 						results.append(currentFolder)
 			if wantFiles:
 				for currentFile in currentFiles:
