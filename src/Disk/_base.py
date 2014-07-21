@@ -303,12 +303,12 @@ class FilePath(PathAbstract):
 	def copyDates(self, destFilePath):
 		destFilePath.utime(self.getatime(), self.getmtime())
 	
-	def copy(self, destFilePath, shouldCopyDates):
-		if destFilePath.isdir():
-			destFilePath = destFilePath.joinFile(str(self.basename()))
-		destFileObj = self._preCopy_getFileObj(destFilePath, shouldCopyDates)
-		self._storeData(destFileObj, shouldCopyDates, destFilePath)
-		assert self.getsize() == destFilePath.getsize()
+	def copy(self, destPath, shouldCopyDates):
+		if isinstance(destPath, FolderPath):
+			destPath = destPath.joinFile(str(self.basename()))
+		destFileObj = self._preCopy_getFileObj(destPath, shouldCopyDates)
+		self._storeData(destFileObj, shouldCopyDates, destPath)
+		assert self.getsize() == destPath.getsize()
 	
 	def _preCopy_getFileObj(self, destFilePath, shouldCopyDates):
 		destFilePath.create()
