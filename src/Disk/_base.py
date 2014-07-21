@@ -352,6 +352,8 @@ class FolderPath(PathAbstract):
 			srcSubfolderPath.copy(destFolderPath.joinFolder(str(srcSubfolderPath.basename())))
 		for srcFilePath in self.walk(isRecursive=False, wantFiles=True, wantFolders=False):
 			srcFilePath.copy(destFolderPath, shouldCopyDates)
+	def exists(self):
+		return super(FolderPath, self)._getattr("exists")() and self.isdir()
 	def create(self):
 		"""Create directory if not exists"""
 		if not self.exists():
