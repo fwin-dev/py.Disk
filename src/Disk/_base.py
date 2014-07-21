@@ -298,6 +298,8 @@ class FilePath(PathAbstract):
 			if not wasClosed and hasattr(destFileObj, "reopen"):
 				destFileObj.reopen()
 	
+	def exists(self):
+		return super(FilePath, self)._getattr("exists")() and self.isfile()
 	def copyDates(self, destFilePath):
 		destFilePath.utime(self.getatime(), self.getmtime())
 	
