@@ -52,6 +52,7 @@ In addition, some additional functions (many from `shutil`) are also available:
 	- `copy(destinationFilePath, shouldCopyDates)`
 	- `create()` - Similar to `touch`
 	- `isBinary()`
+	- `asFile(mode="rb")` - Creates a `File` object that can be read from or written to
 - For `FolderPath` objects:
 	- `copy(destinationFilePath)`
 	- `remove(isRecursive)`
