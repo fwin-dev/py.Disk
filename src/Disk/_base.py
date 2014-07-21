@@ -365,6 +365,9 @@ class FolderPath(PathAbstract):
 				return self.rmdir()
 			else:
 				return self.rmtree()
+	def rmdirs(self, *args, **kwargs):
+		if self.exists():
+			return self.rmtree(*args, **kwargs)
 	
 	def mkdir(self, *args, **kwargs):
 		if not self.exists():
