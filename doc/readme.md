@@ -36,27 +36,27 @@ get the `dirname` of a path, do:
 In addition, some additional functions (many from `shutil`) are also available:
 
 - For both `FilePath` and `FolderPath` objects:
-  - `splitAll()` - Splits each path component (folder/filename) up, returning them all
-    - Examples (Assume `FolderPath` means `Disk.Local.FolderPath` or an instance thereof, and similarly with `FilePath`):
-      - `FolderPath("/foo/bar").splitAll()` returns `[FolderPath("/"), FolderPath("foo"), FolderPath("bar")]`
-      - `FolderPath("/foo/bar/").splitAll()` returns `[FolderPath("/"), FolderPath("foo"), FolderPath("bar")]`
-      - `FolderPath("foo/bar").splitAll()` returns `[FolderPath("foo"), FolderPath("bar")]`
-      - `FolderPath("foo").splitAll()` returns `[FolderPath("foo")]`
-      - `FilePath("/foo.txt").splitAll()` returns `[FolderPath("/"), FilePath("foo.txt")]`
-      - `FilePath("foo/bar.txt").splitAll()` returns `[FolderPath("foo"), FilePath("bar.txt")]`
-      - `FilePath("bar.txt").splitAll()` returns `[FilePath("bar.txt")]`
-      - etc.
+	- `splitAll()` - Splits each path component (folder/filename) up, returning them all
+		- Examples (Assume `FolderPath` means `Disk.Local.FolderPath` or an instance thereof, and similarly with `FilePath`):
+			- `FolderPath("/foo/bar").splitAll()` returns `[FolderPath("/"), FolderPath("foo"), FolderPath("bar")]`
+			- `FolderPath("/foo/bar/").splitAll()` returns `[FolderPath("/"), FolderPath("foo"), FolderPath("bar")]`
+			- `FolderPath("foo/bar").splitAll()` returns `[FolderPath("foo"), FolderPath("bar")]`
+			- `FolderPath("foo").splitAll()` returns `[FolderPath("foo")]`
+			- `FilePath("/foo.txt").splitAll()` returns `[FolderPath("/"), FilePath("foo.txt")]`
+			- `FilePath("foo/bar.txt").splitAll()` returns `[FolderPath("foo"), FilePath("bar.txt")]`
+			- `FilePath("bar.txt").splitAll()` returns `[FilePath("bar.txt")]`
+			- etc.
 - For `FilePath` objects:
-  - `move(destinationFilePath)`
-  - `rename(newFilename)`
-  - `copy(destinationFilePath, shouldCopyDates)`
-  - `create()` - Similar to `touch`
-  - `isBinary()`
+	- `move(destinationFilePath)`
+	- `rename(newFilename)`
+	- `copy(destinationFilePath, shouldCopyDates)`
+	- `create()` - Similar to `touch`
+	- `isBinary()`
 - For `FolderPath` objects:
-  - `copy(destinationFilePath)`
-  - `remove(isRecursive)`
-  - `mkdirs()`/`makedirs()` - Same as `os.path.makedirs`
-  - `walk(...)` - See below
+	- `copy(destinationFilePath)`
+	- `remove(isRecursive)`
+	- `mkdirs()`/`makedirs()` - Same as `os.path.makedirs`
+	- `walk(...)` - See below
 
 ### Walking a folder
 
