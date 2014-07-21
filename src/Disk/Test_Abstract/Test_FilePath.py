@@ -23,7 +23,6 @@ class FilePathAbstract:
 	def _writeSrcFile(self):
 		with self.srcFilePath.asFile("w") as srcFile:
 			srcFile.write("abcdef\nghijkl\n")
-		print(self.srcFilePath.getmtime())
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0
 		if self.srcFilePath.getmtime() == int(self.srcFilePath.getmtime()):
 			print("WARNING: Your OS does not support fractional time precision on files")
@@ -58,7 +57,8 @@ class FilePathAbstract:
 		self.srcFilePath.copy(self.destFilePath, shouldCopyDates=True)
 		self.assertTrue(self.srcFilePath.exists() and self.srcFilePath.getsize() > 0, "Source file was modified on a copy operation!!")
 		self.assertEqual(self.srcFilePath.getsize(), self.destFilePath.getsize(), "Source file contents were not entirely copied to the destination file")
-		self.assertEqual(self.srcFilePath.getmtime(), self.destFilePath.getmtime(), "Source file 'last modified' timestamp was not copied correctly to the destination file, or filesystems do not support the same precision")
+		timeDelta = self.srcFilePath.getmtime() - self.destFilePath.getmtime()
+		self.assertEqual(timeDelta, 0, "timeDelta=" + str(timeDelta) + " : Source file 'last modified' timestamp was not copied correctly to the destination file, or filesystems do not support the same precision.")
 	
 	def test_copy_noModifiedDate(self):
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0
@@ -66,7 +66,8 @@ class FilePathAbstract:
 		self.srcFilePath.copy(self.destFilePath, shouldCopyDates=False)
 		self.assertTrue(self.srcFilePath.exists() and self.srcFilePath.getsize() > 0, "Source file was modified on a copy operation!!")
 		self.assertEqual(self.srcFilePath.getsize(), self.destFilePath.getsize(), "Source file contents were not entirely copied to the destination file")
-		self.assertNotEqual(self.srcFilePath.getmtime(), self.destFilePath.getmtime(), "Source file 'last modified' timestamp was not copied correctly to the destination file, or filesystems do not support the same precision")
+		timeDelta = abs(self.srcFilePath.getmtime() - self.destFilePath.getmtime())
+		self.assertTrue(timeDelta > 1, "Source file 'last modified' timestamp was not copied correctly to the destination file")
 	
 	def test_move(self):
 		assert self.srcFilePath.exists() and self.srcFilePath.getsize() > 0

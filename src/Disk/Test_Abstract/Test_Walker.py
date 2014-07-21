@@ -10,7 +10,8 @@ class WalkerAbstract:
 	
 	def setUp(self):
 		super(WalkerAbstract, self).setUp()
-		assert not self.folderPath.exists()
+		if self.folderPath.exists():
+			raise Exception("Folder must not already exist for testing Walker implementation. Specify another (non-existing) folder, or delete: " + str(self.folderPath))
 		self.folderPath.mkdir()
 	def tearDown(self):
 		super(WalkerAbstract, self).tearDown()
