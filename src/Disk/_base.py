@@ -90,6 +90,8 @@ class PathAbstract(object):
 		self.path = path
 		if not isinstance(self.path, basestring):
 			raise Exception("Incorrect type: " + str(type(self.path)) + ", instance passed='" + repr(self.path) + "'")
+		if self.path == "":
+			raise Exception("Invalid path: '' (empty string)")
 	@abstractmethod
 	def _makeFilePath(self, newPath):
 		pass
