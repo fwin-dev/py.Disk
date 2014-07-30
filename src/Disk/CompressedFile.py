@@ -1,52 +1,63 @@
-import zipfile
+import Disk.Local
+
+import zipfile as zipfile_module
 import os, os.path
 
 class UnrecognizedFormat(Exception):
 	def __init__(self, msg):
 		Exception.__init__(self, msg)
 
-class ZipFile:
+class ZipFile(object):
 	"""Improvement of built-in python module zipfile.Zipfile"""
-	def __init__(self, zipFilePath):
-		self.zipFilePath = zipFilePath
-	def _ensureDirectory(self, path):
-		"""Ensure that the parent directory of `path` exists"""
-		dirname = os.path.dirname(path)
-		if not os.path.isdir(dirname):
-			os.makedirs(dirname)
+	def __init__(self, zipFile):
+		"""
+		@type zipFile: Can be a file-like object (including any File instance), a FilePath instance, or a string.
+		"""
+		self.zipFile = zipFile
+		if isinstance(self.zipFile, basestring):
+			self.zipFile = Disk.Local.FilePath(self.zipFile)
+		if isinstance(self.zipFile, Disk._base.FilePath):
+			self.zipFile = self.zipFile.asFile(mode="rb")
+	
 	def extract(self, extractDir):
 		"""
-		Extract zipFilePath to extractDir.
+		Extract the ZipFile instance to extractDir.
+		
+		@type extractDir: Can be a FolderPath instance or a string
 		
 		Sets chmod permissions for each file from the zip to the extracted one, which the built-in python zipfile module doesn't do by default.
 		Source: Adapted from https://bitbucket.org/mumak/distribute/src/2f489b41a507/setuptools/archive_util.py
 		"""
-		if not zipfile.is_zipfile(self.zipFilePath):
-			raise UnrecognizedFormat(str(self.zipFilePath) + " is not a zip file")
+		if not zipfile_module.is_zipfile(self.zipFile):
+			raise UnrecognizedFormat(str(self.zipFile) + " is not a zip file")
+		if isinstance(extractDir, basestring):
+			extractDir = Disk.Local.FolderPath(extractDir)
 		
-		z = zipfile.ZipFile(self.zipFilePath)
+		zipfile = zipfile_module.ZipFile(self.zipFile)
 		try:
-			for info in z.infolist():
+			for info in zipfile.infolist():
 				name = info.filename
 	
 				# don't extract absolute paths or ones with .. in them
 				if name.startswith("/") or ".." in name:
 					continue
 				
-				target = os.path.join(str(extractDir), *name.split("/"))
 				if name.endswith("/"):	# directory
-					self._ensureDirectory(target)
+					destPath = extractDir.joinFolder(*name.split("/"))
+					destPath.dirname().mkdirs()
 				else:	# file
-					self._ensureDirectory(target)
-					data = z.read(info.filename)
-					f = open(target,"wb")
+					destPath = extractDir.joinFile(*name.split("/"))
+					destPath.dirname().mkdirs()
+					data = zipfile.read(info.filename)
+					f = open(destPath, "wb")
 					try:
 						f.write(data)
 					finally:
 						f.close()
 						del data
+				
 				unix_attributes = info.external_attr >> 16
 				if unix_attributes:
-					os.chmod(target, unix_attributes)
+					os.chmod(destPath, unix_attributes)
 		finally:
-			z.close()
+			zipfile.close()
