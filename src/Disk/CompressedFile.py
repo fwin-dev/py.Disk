@@ -1,6 +1,8 @@
 import Disk.Local
 
 import zipfile as zipfile_module
+from datetime import datetime
+import calendar
 import os, os.path
 
 class UnrecognizedFormat(Exception):
@@ -19,7 +21,7 @@ class ZipFile(object):
 		if isinstance(self.zipFile, Disk._base.FilePath):
 			self.zipFile = self.zipFile.asFile(mode="rb")
 	
-	def extract(self, extractDir):
+	def extract(self, extractDir, shouldCopyDates):
 		"""
 		Extract the ZipFile instance to extractDir.
 		
@@ -55,6 +57,10 @@ class ZipFile(object):
 					finally:
 						f.close()
 						del data
+				
+				if shouldCopyDates:
+					modTime_int = calendar.timegm(datetime(*info.date_time).timetuple())
+					destPath.utime(modTime_int, modTime_int)
 				
 				unix_attributes = info.external_attr >> 16
 				if unix_attributes:
