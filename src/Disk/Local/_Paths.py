@@ -1,6 +1,4 @@
 from Disk import _base
-import OS
-
 import shutil
 
 class PathAbstract(object):

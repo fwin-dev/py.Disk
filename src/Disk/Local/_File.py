@@ -37,7 +37,7 @@ class BaseFile(_base.File):
 	
 	def __getattr__(self, name):
 		if self._file == None:
-			raise AttributeError("Attempt to call method " + str(name) + " before file was opened")
+			raise AttributeError("Attempt to access method " + str(name) + " before file was opened")
 		if hasattr(self._file, name):
 			return getattr(self._file, name)
 		raise AttributeError
