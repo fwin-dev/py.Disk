@@ -3,7 +3,7 @@ import Disk.Local
 import zipfile as zipfile_module
 from datetime import datetime
 import calendar
-import os, os.path
+import os
 
 class UnrecognizedFormat(Exception):
 	def __init__(self, msg):
@@ -15,11 +15,11 @@ class ZipFile(object):
 		"""
 		@type zipFile: Can be a file-like object (including any File instance), a FilePath instance, or a string.
 		"""
-		self.zipFile = zipFile
-		if isinstance(self.zipFile, basestring):
-			self.zipFile = Disk.Local.FilePath(self.zipFile)
-		if isinstance(self.zipFile, Disk._base.FilePath):
-			self.zipFile = self.zipFile.asFile(mode="rb")
+		self._zipFile = zipFile
+		if isinstance(self._zipFile, basestring):
+			self._zipFile = Disk.Local.FilePath(self._zipFile)
+		if isinstance(self._zipFile, Disk._base.FilePath):
+			self._zipFile = self._zipFile.asFile(mode="rb")
 	
 	def extract(self, extractDir, shouldCopyDates):
 		"""
@@ -30,12 +30,14 @@ class ZipFile(object):
 		Sets chmod permissions for each file from the zip to the extracted one, which the built-in python zipfile module doesn't do by default.
 		Source: Adapted from https://bitbucket.org/mumak/distribute/src/2f489b41a507/setuptools/archive_util.py
 		"""
-		if not zipfile_module.is_zipfile(self.zipFile):
-			raise UnrecognizedFormat(str(self.zipFile) + " is not a zip file")
-		if isinstance(extractDir, basestring):
-			extractDir = Disk.Local.FolderPath(extractDir)
+		with self._zipFile:
+			if not zipfile_module.is_zipfile(self._zipFile):
+				raise UnrecognizedFormat(str(self._zipFile) + " is not a zip file")
+			if isinstance(extractDir, basestring):
+				extractDir = Disk.Local.FolderPath(extractDir)
 		
-		zipfile = zipfile_module.ZipFile(self.zipFile)
+		self._zipFile.open()
+		zipfile = zipfile_module.ZipFile(self._zipFile)
 		try:
 			for info in zipfile.infolist():
 				name = info.filename
@@ -51,12 +53,9 @@ class ZipFile(object):
 					destPath = extractDir.joinFile(*name.split("/"))
 					destPath.dirname().mkdirs()
 					data = zipfile.read(info.filename)
-					f = open(destPath, "wb")
-					try:
+					with destPath.asFile("wb") as f:
 						f.write(data)
-					finally:
-						f.close()
-						del data
+					del data
 				
 				if shouldCopyDates:
 					modTime_int = calendar.timegm(datetime(*info.date_time).timetuple())
@@ -64,6 +63,7 @@ class ZipFile(object):
 				
 				unix_attributes = info.external_attr >> 16
 				if unix_attributes:
-					os.chmod(destPath, unix_attributes)
+					destPath.chmod(unix_attributes)
 		finally:
 			zipfile.close()
+			self._zipFile.close()
