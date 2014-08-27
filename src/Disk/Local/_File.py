@@ -50,6 +50,6 @@ class File(BaseFile):
 		self._path = path
 		self.mode = mode
 		super(File, self).__init__(mode)
+	
 	def _getPath(self):
 		return FilePath(self._path)
-

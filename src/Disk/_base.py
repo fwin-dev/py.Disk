@@ -36,7 +36,6 @@ class File(object):
 		self._createdOnOpen = False		# currently unused
 		if not self.getPath().exists():
 			self._createdOnOpen = True
-#		print(repr(self))
 		if self.isClosed():
 			self.reopen()
 		return self
