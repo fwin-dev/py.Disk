@@ -25,8 +25,8 @@ setup(
 	test_suite = "test",
 	
 	install_requires = [
-		"py.Lang",
-		"py.OS",
+		"py.Lang	>=2.0.0, <2.1",
+		"py.OS		>=1.0.0, <1.1",
 	],
 	classifiers = [
 		# http://pypi.python.org/pypi?%3Aaction=list_classifiers
