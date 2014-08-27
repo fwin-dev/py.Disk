@@ -12,8 +12,8 @@ class BaseFile(_base.File):
 	
 	def __enter__(self):
 		return super(BaseFile, self).__enter__()
-	def __exit__(self, *args):
-		super(BaseFile, self).__exit__(*args)
+	def __exit__(self, *args, **kwargs):
+		return super(BaseFile, self).__exit__(*args, **kwargs)
 	
 	def _reopen(self):
 #		print("baseFile: opening for " + self.mode + ": " + str(self.getPath()))
