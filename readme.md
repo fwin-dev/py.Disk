@@ -47,14 +47,16 @@ In addition, some additional functions (many from `shutil`) are also available:
 			- `FilePath("bar.txt").splitAll()` returns `[FilePath("bar.txt")]`
 			- etc.
 - For `FilePath` objects:
-	- `move(destinationFilePath)`
+	- `move(destPath)`
+	- `copy(destPath, shouldCopyDates)`
+		- When the `copy` or `move` functions are called, the file's folder must already exist; otherwise, an exception is raised: `IOError: [Errno 2] No such file or directory` (or similar)
 	- `rename(newFilename)`
-	- `copy(destinationFilePath, shouldCopyDates)`
 	- `create()` - Similar to `touch`
 	- `isBinary()`
 	- `asFile(mode="rb")` - Creates a `File` object that can be read from or written to
 - For `FolderPath` objects:
-	- `copy(destinationFilePath)`
+	- `copy(destPath)`
+		- The destination folder will be created if it does not already exist.
 	- `remove(isRecursive)`
 	- `mkdirs()`/`makedirs()` - Same as `os.path.makedirs`
 	- `walk(...)` - See below
